@@ -8,10 +8,19 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <a class="nav-link font-poppins mx-3 hvr-underline-from-center" aria-current="page" href="#">Home</a>
+                <a class="nav-link font-poppins mx-3 hvr-underline-from-center" href="#informasi">About</a>
+                <a class="nav-link font-poppins mx-3 hvr-underline-from-center" href="#ourteam">Our Team</a>
+                <a class="nav-link font-poppins mx-3 hvr-underline-from-center" href="#faq">FAQ</a>
                 <a class="nav-link font-poppins mx-3 hvr-underline-from-center" href="#">Contact</a>
-                <a class="nav-link font-poppins mx-3 hvr-underline-from-center" href="#">About Us</a>
-                <button class="btn bg-main mx-3 text-white font-poppins">Sign
-                    Up</button>
+                <button class="cssbuttons-io-button mx-3 font-poppins gradient"> Get Started
+                    <div class="icon">
+                        <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                                fill="currentColor"></path>
+                        </svg>
+                    </div>
+                </button>
             </div>
         </div>
     </div>

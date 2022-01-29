@@ -9,6 +9,9 @@
     {{-- MY CSS --}}
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/hover.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/bgjar.css">
+    <link rel="stylesheet" href="css/izmir.css">
 
     {{-- Favicon --}}
     <link rel="shortcut icon" href="../images/Logo EzSchool.png" type="image/x-icon">
@@ -152,10 +155,99 @@
             stroke="none" stroke-width="0" fill="#674ea7ff"
             class="transition-all duration-300 ease-in-out delay-150 path-2"></path>
     </svg>
-    <footer id="footer" class="bg-main text-center pb-5">
-        <img src="images/Logo EzSchool.png" alt="logo" class="img-fluid" width="100">
-        <p class="font-poppins text-white">Copyright <i class="far fa-copyright"></i> 2022 . EzSchool Team All rights
-            reserved</p>
+    <footer id="footer" class="container-fluid pb-3">
+        <div class="row justify-content-center mb-4">
+            <div class="col-md-3 text-center">
+                <h3 class="text-white font-poppins fw-bold">Contact Details</h3>
+                <h6 class="font-montserrat text-white">Please Feel Free To Contact Us</h6>
+                <hr class="text-white mb-4">
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form action="/pesan" method="POST">
+                    @csrf
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control font-poppins" id="nama" required
+                                    autocomplete="off" placeholder="name@example.com">
+                                <label for="nama" class="font-poppins text-main2">First Name</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control font-poppins" id="nama" required
+                                    autocomplete="off" placeholder="name@example.com">
+                                <label for="nama" class="font-poppins text-main2">Last Name</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control font-poppins" id="floatingInput"
+                            placeholder="name@example.com" required autocomplete="off">
+                        <label for="floatingInput" class="font-poppins text-main2">Email</label>
+                    </div>
+                    <div class="input-group input-group-lg mb-3">
+                        <span class="input-group-text font-poppins bg-main text-white" id="basic-addon1">+62</span>
+                        <input type="tel" class=" form-control font-poppins" aria-label="No HP"
+                            aria-describedby="basic-addon1" required autocomplete="off" max="13" min="11" maxlength="12"
+                            pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" title="Format Nomer HP salah">
+                    </div>
+                    <div class="form-floating">
+                        <textarea class="form-control font-poppins" placeholder="Leave a comment here"
+                            id="floatingTextarea2" style="height: 100px" required autocomplete="off"
+                            resize="none"></textarea>
+                        <label for="floatingTextarea2" class="font-poppins text-main2">Message</label>
+                    </div>
+                    <button id="btn" class="mt-3 border-rd" type="submit">
+                        <div class="svg-wrapper-1">
+                            <div class="svg-wrapper">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                    <path fill="none" d="M0 0h24v24H0z"></path>
+                                    <path fill="currentColor"
+                                        d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z">
+                                    </path>
+                                </svg>
+                            </div>
+                        </div>
+                        <span class="font-poppins fw-bold">Send</span>
+                    </button>
+                </form>
+            </div>
+            <div class="col-md-1 text-center">
+                <a href="https:/facebook.com/ezschool" target="_blank"><img src="images/sosmed/facebook.png"
+                        alt="facebook" class="img-fluid sosmed hvr-float-shadow mb-3" width="55"></a>
+                <a href="https:/instagram.com/ezschool" target="_blank"><img src="images/sosmed/instagram.png"
+                        alt="facebook" class="img-fluid sosmed hvr-float-shadow mb-3" width="55"></a>
+                <a href="https:/github.com/zinedine1210" target="_blank"><img src="images/sosmed/github.png"
+                        alt="facebook" class="img-fluid sosmed hvr-float-shadow mb-3" width="55"></a>
+                <a href="https:/mailto:ezschool.official@gmail.com?subject=Hallo%20EzSchool" target="_blank"><img
+                        src="images/sosmed/gmail.png" alt="gmail" class="img-fluid sosmed hvr-float-shadow mb-3"
+                        width="55"></a>
+                <a href="https://goo.gl/maps/cp2232gQZvS5SkH66" target="_blank"><img src="images/sosmed/map.png"
+                        alt="map" class="img-fluid sosmed hvr-float-shadow mb-3" width="55"></a>
+            </div>
+        </div>
+
+
+        <div class="copyright text-center">
+            <img src="images/Logo EzSchool.png" alt="logo" class="img-fluid" width="100">
+            <h6 class="font-poppins text-main">Copyright <i class="far fa-copyright"></i> 2022 . <span
+                    class="text-main2">EzSchool Team</span>. All
+                Right Reserved - SMK Negeri 26 Jakarta</h6>
+            <a href="" class="font-montserrat text-muted mx-5 hvr-float-shadow">Terms</a>
+            <a href="" class="font-montserrat text-muted mx-5 hvr-float-shadow">Privacy</a>
+
+
+            <div class="projects mt-3">
+                <h6 class="font-poppins fw-bold text-main mb-2">Follow Our Other Projects</h6>
+                <a href="" target="_blank" class="mx-3 font-courier text-muted fw-bold hvr-float-shadow">Sikritz</a>
+                <a href="" target="_blank" class="mx-3 font-courier text-muted fw-bold hvr-float-shadow">E-Perpus</a>
+                <a href="" target="_blank" class="mx-3 font-courier text-muted fw-bold hvr-float-shadow">Blog</a>
+                <a href="" target="_blank" class="mx-3 font-courier text-muted fw-bold hvr-float-shadow">Sinau</a>
+            </div>
+        </div>
     </footer>
     {{-- akhir footer --}}
 
