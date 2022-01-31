@@ -4,7 +4,7 @@
     {{-- Jumbotron --}}
     <div class="jumbotron jumbotron-fluid">
         <div class="container text-center">
-            <h1 class="display-4 font-poppins text-white">WE ARE CREATIVE SCHOOL</h1>
+            <h1 class="display-4 font-poppins text-white" data-aos="zoom-out" data-aos-once="true">WE'RE CREATIVE SCHOOL</h1>
             <p class="font-courier text-white">We provide school needs in digital form so that we can streamline the
                 activities of students and teachers in the form of Web applications
             </p>
@@ -15,20 +15,22 @@
 
 
     {{-- panel --}}
-    <h5 class="font-poppins judul-panel card border-0 py-2 ps-4 fw-bold text-main">Our Services</h5>
-    <div class="row justify-content-center container-fluid" id="about">
-        <div class="col-md-8">
-            <div class="card border-rd p-3 panel shadow-sm">
-                <div class="row justify-content-center">
-                    <div class="col-md-5 mt-2">
-                        <img src="images/library.png" alt="library" class="img-fluid icon-panel float-start me-3">
-                        <h6 class="font-poppins text-main">E - Perpustakaan</h6>
-                        <p class="text-muted font-courier">Providing digital school books.</p>
-                    </div>
-                    <div class="col-md-5 mt-2 ">
-                        <img src="images/stationery.png" alt="library" class="img-fluid icon-panel float-start me-3">
-                        <h6 class="font-poppins text-main">E - Koperasi</h6>
-                        <p class="text-muted font-courier">Provide a lot of school supplies.</p>
+    <div class="control-panel" data-aos="zoom-in-up" data-aos-once="true">
+        <h5 class="font-poppins judul-panel card border-0 py-2 ps-4 fw-bold text-main">Our Services</h5>
+        <div class="row justify-content-center container-fluid" id="about">
+            <div class="col-md-8">
+                <div class="card border-rd p-3 panel shadow-sm">
+                    <div class="row justify-content-center">
+                        <div class="col-md-5 mt-2">
+                            <img src="images/library.png" alt="library" class="img-fluid icon-panel float-start me-3">
+                            <h6 class="font-poppins text-main">E - Perpustakaan</h6>
+                            <p class="text-muted font-courier">Providing digital school books.</p>
+                        </div>
+                        <div class="col-md-5 mt-2 ">
+                            <img src="images/stationery.png" alt="library" class="img-fluid icon-panel float-start me-3">
+                            <h6 class="font-poppins text-main">E - Koperasi</h6>
+                            <p class="text-muted font-courier">Provide a lot of school supplies.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -43,29 +45,36 @@
         <div class="row justify-content-center align-items-center">
             <div class="col-md-5">
                 <div class="row justify-content-start">
-                    <h3 class="text-main font-poppins fw-bold">Data Information</h3>
-                    <h6 class="font-montserrat text-main3">We provide the best service for our valuable clients</h6>
-                    <hr class="text-main mb-4">
-                    <div class="col-md-5 text-center text-white info-number m-3">
-                        <h1 class="font-poppins fw-bold display-4 text-main">904</h1>
-                        <h5 class="font-courier text-main3">Guest</h5>
+                    <h3 class="text-main font-poppins fw-bold" data-aos="fade-right" data-aos-once="true">Why Should
+                        EzSchool <i class="far fa-question-circle ms-2 text-main2"></i></h3>
+                    <h6 class="font-montserrat text-main3" data-aos="fade-right" data-aos-once="true">We provide the best
+                        service for our valuable clients</h6>
+                    <hr class="text-main mb-4" data-aos="fade-right" data-aos-once="true">
+                    <div class="col-md-5 text-center text-white info-number m-3" data-aos-offset="300"
+                        data-aos="fade-down-right">
+                        <h1 class="font-poppins fw-bold display-4 text-main">1.902</h1>
+                        <h5 class="font-courier text-main3">Guests</h5>
                     </div>
-                    <div class="col-md-5 text-center text-white info-number m-3">
-                        <h1 class="font-poppins fw-bold display-4 text-main">150</h1>
-                        <h5 class="font-courier text-main3">Client</h5>
+                    <div class="col-md-5 text-center text-white info-number m-3" data-aos-offset="300"
+                        data-aos="fade-down-left">
+                        <h1 class="font-poppins fw-bold display-4 text-main">753</h1>
+                        <h5 class="font-courier text-main3">Clients</h5>
                     </div>
-                    <div class="col-md-5 text-center text-white info-number m-3">
-                        <h1 class="font-poppins fw-bold display-4 text-main">203</h1>
-                        <h5 class="font-courier text-main3">Book</h5>
+                    <div class="col-md-5 text-center text-white info-number m-3" data-aos-offset="200"
+                        data-aos="fade-up-right">
+                        <h1 class="font-poppins fw-bold display-4 text-main">657</h1>
+                        <h5 class="font-courier text-main3">Books</h5>
                     </div>
-                    <div class="col-md-5 text-center text-white info-number m-3">
-                        <h1 class="font-poppins fw-bold display-4 text-main">783</h1>
-                        <h5 class="font-courier text-main3">Thing</h5>
+                    <div class="col-md-5 text-center text-white info-number m-3" data-aos-offset="200"
+                        data-aos="fade-up-left">
+                        <h1 class="font-poppins fw-bold display-4 text-main">3.972</h1>
+                        <h5 class="font-courier text-main3">Things</h5>
                     </div>
                 </div>
             </div>
             <div class="col-md-5">
-                <img src="images/vektor2.png" alt="vektor" class="img-fluid vektorinformasi">
+                <img src="images/vektor2.png" alt="vektor" class="img-fluid vektorinformasi" data-aos-offset="400"
+                    data-aos="zoom-out">
             </div>
         </div>
     </section>
@@ -77,14 +86,14 @@
     {{-- Our Team --}}
     <section id="ourteam" class="container-fluid">
         <div class="row justify-content-center mb-4">
-            <div class="col-md-2 text-center">
+            <div class="col-md-2 text-center" data-aos="fade-up" data-aos-once="true">
                 <h3 class="text-main font-poppins fw-bold">Our Team</h3>
                 <h6 class="font-montserrat text-main3">Our Real Heros</h6>
                 <hr class="text-main mb-4">
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="col-md-6">
+            <div class="col-md-6" data-aos="fade-right" data-aos-offset="400">
                 <div id="ourteamcarousel" class="carousel carousel-dark slide" data-bs-ride="carousel" data-bs-touch="false"
                     data-bs-interval="false">
                     <div class="carousel-indicators">
@@ -130,10 +139,13 @@
                     </button>
                 </div>
             </div>
-            <div class="col-md-5">
+            <div class="col-md-5 text-center" data-aos="fade-left" data-aos-offset="400">
                 <iframe src="https://my.atlistmaps.com/map/2880df8f-667b-4e9d-87bb-9121c0d5d4c7?share=true"
-                    allow="geolocation" width="100%" height="500px" class="border-rd" frameborder="0" scrolling="no"
+                    allow="geolocation" width="100%" height="400px" class="border-rd" frameborder="0" scrolling="no"
                     allowfullscreen></iframe>
+                <a class="btn bg-main px-4 py-2 font-poppins fw-bold text-white border-rd hvr-bounce-to-bottom mt-3"
+                    href="https://app.lapentor.com/sphere/smkn-26-1602643278?scene=5f87dd1c362df77f177c1f53">Explore Our
+                    School</a>
             </div>
         </div>
     </section>
@@ -144,12 +156,12 @@
 
     {{-- FAQ --}}
     <section id="faq" class="container-fluid">
-        <h3 class="text-main font-poppins fw-bold mb-4 text-center">Frequently Asked Question<i
-                class="far fa-question-circle ms-2 text-main2"></i></h3>
+        <h3 class="text-main font-poppins fw-bold mb-4 text-center" data-aos="fade-up" data-aos-once="true">Frequently Asked
+            Question<i class="far fa-question-circle ms-2 text-main2"></i></h3>
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="accordion accordion-flush" id="accordionFlushExample">
-                    <div class="accordion-item">
+                    <div class="accordion-item" data-aos="fade-up">
                         <h2 class="accordion-header" id="flush-headingOne">
                             <button class="accordion-button collapsed font-poppins" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
@@ -164,7 +176,7 @@
                                 nisi voluptas quasi. Earum alias ad quam doloribus eius aperiam!</div>
                         </div>
                     </div>
-                    <div class="accordion-item">
+                    <div class="accordion-item" data-aos="fade-up">
                         <h2 class="accordion-header" id="flush-headingOne">
                             <button class="accordion-button collapsed font-poppins" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#flush-two" aria-expanded="false" aria-controls="flush-two">
@@ -179,7 +191,7 @@
                                 nisi voluptas quasi. Earum alias ad quam doloribus eius aperiam!</div>
                         </div>
                     </div>
-                    <div class="accordion-item">
+                    <div class="accordion-item" data-aos="fade-up">
                         <h2 class="accordion-header" id="flush-headingOne">
                             <button class="accordion-button collapsed font-poppins" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#flush-three" aria-expanded="false" aria-controls="flush-three">
@@ -194,7 +206,7 @@
                                 nisi voluptas quasi. Earum alias ad quam doloribus eius aperiam!</div>
                         </div>
                     </div>
-                    <div class="accordion-item">
+                    <div class="accordion-item" data-aos="fade-up">
                         <h2 class="accordion-header" id="flush-headingOne">
                             <button class="accordion-button collapsed font-poppins" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#flush-four" aria-expanded="false" aria-controls="flush-four">
@@ -210,7 +222,7 @@
                                 nisi voluptas quasi. Earum alias ad quam doloribus eius aperiam!</div>
                         </div>
                     </div>
-                    <div class="accordion-item">
+                    <div class="accordion-item" data-aos="fade-up">
                         <h2 class="accordion-header" id="flush-headingOne">
                             <button class="accordion-button collapsed font-poppins" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#flush-four" aria-expanded="false" aria-controls="flush-four">
@@ -226,7 +238,7 @@
                                 nisi voluptas quasi. Earum alias ad quam doloribus eius aperiam!</div>
                         </div>
                     </div>
-                    <div class="accordion-item">
+                    <div class="accordion-item" data-aos="fade-up">
                         <h2 class="accordion-header" id="flush-headingOne">
                             <button class="accordion-button collapsed font-poppins" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#flush-four" aria-expanded="false" aria-controls="flush-four">

@@ -11,7 +11,7 @@
                 <a class="nav-link font-poppins mx-3 hvr-underline-from-center" href="#informasi">About</a>
                 <a class="nav-link font-poppins mx-3 hvr-underline-from-center" href="#ourteam">Our Team</a>
                 <a class="nav-link font-poppins mx-3 hvr-underline-from-center" href="#faq">FAQ</a>
-                <a class="nav-link font-poppins mx-3 hvr-underline-from-center" href="#">Contact</a>
+                <a class="nav-link font-poppins mx-3 hvr-underline-from-center" href="#contact">Contact</a>
                 <button class="cssbuttons-io-button mx-3 font-poppins gradient"> Get Started
                     <div class="icon">
                         <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

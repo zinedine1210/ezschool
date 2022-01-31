@@ -155,16 +155,16 @@
             stroke="none" stroke-width="0" fill="#674ea7ff"
             class="transition-all duration-300 ease-in-out delay-150 path-2"></path>
     </svg>
-    <footer id="footer" class="container-fluid pb-3">
+    <footer id="contact" class="container-fluid pb-3">
         <div class="row justify-content-center mb-4">
-            <div class="col-md-3 text-center">
+            <div class="col-md-3 text-center" data-aos="fade-up" data-aos-once="true">
                 <h3 class="text-white font-poppins fw-bold">Contact Details</h3>
                 <h6 class="font-montserrat text-white">Please Feel Free To Contact Us</h6>
                 <hr class="text-white mb-4">
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="col-md-6">
+            <div class="col-md-6" data-aos="zoom-in" data-aos-offset="400">
                 <form action="/pesan" method="POST">
                     @csrf
                     <div class="row">
@@ -215,18 +215,22 @@
                     </button>
                 </form>
             </div>
-            <div class="col-md-1 text-center">
-                <a href="https:/facebook.com/ezschool" target="_blank"><img src="images/sosmed/facebook.png"
-                        alt="facebook" class="img-fluid sosmed hvr-float-shadow mb-3" width="55"></a>
-                <a href="https:/instagram.com/ezschool" target="_blank"><img src="images/sosmed/instagram.png"
-                        alt="facebook" class="img-fluid sosmed hvr-float-shadow mb-3" width="55"></a>
-                <a href="https:/github.com/zinedine1210" target="_blank"><img src="images/sosmed/github.png"
-                        alt="facebook" class="img-fluid sosmed hvr-float-shadow mb-3" width="55"></a>
-                <a href="https:/mailto:ezschool.official@gmail.com?subject=Hallo%20EzSchool" target="_blank"><img
-                        src="images/sosmed/gmail.png" alt="gmail" class="img-fluid sosmed hvr-float-shadow mb-3"
+            <div class="col-md-1 text-center" data-aos-offset="400">
+                <a href="https:/facebook.com/ezschool" target="_blank"><img data-aos="flip-down"
+                        src="images/sosmed/facebook.png" alt="facebook" class="img-fluid sosmed hvr-float-shadow mb-3"
                         width="55"></a>
-                <a href="https://goo.gl/maps/cp2232gQZvS5SkH66" target="_blank"><img src="images/sosmed/map.png"
-                        alt="map" class="img-fluid sosmed hvr-float-shadow mb-3" width="55"></a>
+                <a href="https:/instagram.com/ezschool" target="_blank"><img data-aos="flip-down"
+                        src="images/sosmed/instagram.png" alt="facebook" class="img-fluid sosmed hvr-float-shadow mb-3"
+                        width="55"></a>
+                <a href="https:/github.com/zinedine1210" target="_blank"><img data-aos="flip-down"
+                        src="images/sosmed/github.png" alt="facebook" class="img-fluid sosmed hvr-float-shadow mb-3"
+                        width="55"></a>
+                <a href="mailto:ezschool.official@gmail.com?subject=Hallo%20EzSchool" target="_blank"><img
+                        data-aos="flip-down" src="images/sosmed/gmail.png" alt="gmail"
+                        class="img-fluid sosmed hvr-float-shadow mb-3" width="55"></a>
+                <a href="https://goo.gl/maps/cp2232gQZvS5SkH66" target="_blank"><img data-aos="flip-down"
+                        src="images/sosmed/map.png" alt="map" class="img-fluid sosmed hvr-float-shadow mb-3"
+                        width="55"></a>
             </div>
         </div>
 
