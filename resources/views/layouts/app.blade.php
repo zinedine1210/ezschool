@@ -172,21 +172,21 @@
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control font-poppins" id="nama" required
                                     autocomplete="off" placeholder="name@example.com">
-                                <label for="nama" class="font-poppins text-main2">First Name</label>
+                                <label for="nama" class="font-poppins text-main3">First Name</label>
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control font-poppins" id="nama" required
                                     autocomplete="off" placeholder="name@example.com">
-                                <label for="nama" class="font-poppins text-main2">Last Name</label>
+                                <label for="nama" class="font-poppins text-main3">Last Name</label>
                             </div>
                         </div>
                     </div>
                     <div class="form-floating mb-3">
                         <input type="email" class="form-control font-poppins" id="floatingInput"
                             placeholder="name@example.com" required autocomplete="off">
-                        <label for="floatingInput" class="font-poppins text-main2">Email</label>
+                        <label for="floatingInput" class="font-poppins text-main3">Email</label>
                     </div>
                     <div class="input-group input-group-lg mb-3">
                         <span class="input-group-text font-poppins bg-main text-white" id="basic-addon1">+62</span>
@@ -198,7 +198,7 @@
                         <textarea class="form-control font-poppins" placeholder="Leave a comment here"
                             id="floatingTextarea2" style="height: 100px" required autocomplete="off"
                             resize="none"></textarea>
-                        <label for="floatingTextarea2" class="font-poppins text-main2">Message</label>
+                        <label for="floatingTextarea2" class="font-poppins text-main3">Message</label>
                     </div>
                     <button id="btn" class="mt-3 border-rd" type="submit">
                         <div class="svg-wrapper-1">
@@ -218,19 +218,19 @@
             <div class="col-md-1 text-center" data-aos-offset="400">
                 <a href="https:/facebook.com/ezschool" target="_blank"><img data-aos="flip-down"
                         src="images/sosmed/facebook.png" alt="facebook" class="img-fluid sosmed hvr-float-shadow mb-3"
-                        width="55"></a>
+                        width="50"></a>
                 <a href="https:/instagram.com/ezschool" target="_blank"><img data-aos="flip-down"
                         src="images/sosmed/instagram.png" alt="facebook" class="img-fluid sosmed hvr-float-shadow mb-3"
-                        width="55"></a>
+                        width="50"></a>
                 <a href="https:/github.com/zinedine1210" target="_blank"><img data-aos="flip-down"
                         src="images/sosmed/github.png" alt="facebook" class="img-fluid sosmed hvr-float-shadow mb-3"
-                        width="55"></a>
+                        width="50"></a>
                 <a href="mailto:ezschool.official@gmail.com?subject=Hallo%20EzSchool" target="_blank"><img
                         data-aos="flip-down" src="images/sosmed/gmail.png" alt="gmail"
-                        class="img-fluid sosmed hvr-float-shadow mb-3" width="55"></a>
+                        class="img-fluid sosmed hvr-float-shadow mb-3" width="50"></a>
                 <a href="https://goo.gl/maps/cp2232gQZvS5SkH66" target="_blank"><img data-aos="flip-down"
                         src="images/sosmed/map.png" alt="map" class="img-fluid sosmed hvr-float-shadow mb-3"
-                        width="55"></a>
+                        width="50"></a>
             </div>
         </div>
 
@@ -242,15 +242,6 @@
                 Right Reserved - SMK Negeri 26 Jakarta</h6>
             <a href="" class="font-montserrat text-muted mx-5 hvr-float-shadow">Terms</a>
             <a href="" class="font-montserrat text-muted mx-5 hvr-float-shadow">Privacy</a>
-
-
-            <div class="projects mt-3">
-                <h6 class="font-poppins fw-bold text-main mb-2">Follow Our Other Projects</h6>
-                <a href="" target="_blank" class="mx-3 font-courier text-muted fw-bold hvr-float-shadow">Sikritz</a>
-                <a href="" target="_blank" class="mx-3 font-courier text-muted fw-bold hvr-float-shadow">E-Perpus</a>
-                <a href="" target="_blank" class="mx-3 font-courier text-muted fw-bold hvr-float-shadow">Blog</a>
-                <a href="" target="_blank" class="mx-3 font-courier text-muted fw-bold hvr-float-shadow">Sinau</a>
-            </div>
         </div>
     </footer>
     {{-- akhir footer --}}

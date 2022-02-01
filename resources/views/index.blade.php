@@ -44,29 +44,29 @@
     <section class="container-fluid" id="informasi">
         <div class="row justify-content-center align-items-center">
             <div class="col-md-5">
-                <div class="row justify-content-start">
-                    <h3 class="text-main font-poppins fw-bold" data-aos="fade-right" data-aos-once="true">Why Should
+                <div class="row justify-content-center">
+                    <h3 class="text-main font-poppins fw-bold" data-aos="fade-up" data-aos-once="true">Why Should
                         EzSchool <i class="far fa-question-circle ms-2 text-main2"></i></h3>
-                    <h6 class="font-montserrat text-main3" data-aos="fade-right" data-aos-once="true">We provide the best
+                    <h6 class="font-montserrat text-main3" data-aos="fade-up" data-aos-once="true">We provide the best
                         service for our valuable clients</h6>
-                    <hr class="text-main mb-4" data-aos="fade-right" data-aos-once="true">
+                    <hr class="text-main mb-4" data-aos="fade-up" data-aos-once="true">
                     <div class="col-md-5 text-center text-white info-number m-3" data-aos-offset="300"
-                        data-aos="fade-down-right">
+                        data-aos="zoom-in-down">
                         <h1 class="font-poppins fw-bold display-4 text-main">1.902</h1>
                         <h5 class="font-courier text-main3">Guests</h5>
                     </div>
                     <div class="col-md-5 text-center text-white info-number m-3" data-aos-offset="300"
-                        data-aos="fade-down-left">
+                        data-aos="zoom-in-down">
                         <h1 class="font-poppins fw-bold display-4 text-main">753</h1>
                         <h5 class="font-courier text-main3">Clients</h5>
                     </div>
                     <div class="col-md-5 text-center text-white info-number m-3" data-aos-offset="200"
-                        data-aos="fade-up-right">
+                        data-aos="zoom-in-up">
                         <h1 class="font-poppins fw-bold display-4 text-main">657</h1>
                         <h5 class="font-courier text-main3">Books</h5>
                     </div>
                     <div class="col-md-5 text-center text-white info-number m-3" data-aos-offset="200"
-                        data-aos="fade-up-left">
+                        data-aos="zoom-in-up">
                         <h1 class="font-poppins fw-bold display-4 text-main">3.972</h1>
                         <h5 class="font-courier text-main3">Things</h5>
                     </div>
@@ -93,7 +93,7 @@
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="col-md-6" data-aos="fade-right" data-aos-offset="400">
+            <div class="col-md-6" data-aos="zoom-in-up" data-aos-offset="400">
                 <div id="ourteamcarousel" class="carousel carousel-dark slide" data-bs-ride="carousel" data-bs-touch="false"
                     data-bs-interval="false">
                     <div class="carousel-indicators">
@@ -139,7 +139,7 @@
                     </button>
                 </div>
             </div>
-            <div class="col-md-5 text-center" data-aos="fade-left" data-aos-offset="400">
+            <div class="col-md-5 text-center" data-aos="zoom-in-up" data-aos-offset="400">
                 <iframe src="https://my.atlistmaps.com/map/2880df8f-667b-4e9d-87bb-9121c0d5d4c7?share=true"
                     allow="geolocation" width="100%" height="400px" class="border-rd" frameborder="0" scrolling="no"
                     allowfullscreen></iframe>

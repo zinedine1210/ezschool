@@ -93,8 +93,34 @@ footer {
     background: linear-gradient(to bottom, #674ea7, #ffffff) !important;
 }
 .copyright {
-    margin: 200px 0px 100px 0px !important;
+    margin: 200px 0px 50px 0px !important;
+}
+.sosmed:hover {
+    width: 60px !important;
+    transition: 0.5s !important;
 }
 
 @media screen and (max-width: 760px) {
+    .jumbotron .display-4 {
+        font-size: 45px !important;
+    }
+    .judul-panel {
+        margin-top: -100px !important;
+        z-index: 1 !important;
+        width: 250px !important;
+        border-radius: 15px !important;
+        margin-left: 100px !important;
+    }
+    .jumbotron p {
+        font-size: 20px !important;
+    }
+    .sosmed {
+        margin-top: 30px !important;
+    }
+    .cssbuttons-io-button {
+        margin: 20px 0px !important;
+    }
+    .navbar-brand {
+        width: 350px !important;
+    }
 }

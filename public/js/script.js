@@ -1,6 +1,6 @@
 // AOS
 AOS.init({
-  duration: 1200
+  duration: 1100
 });
 // Akhir AOS
 
