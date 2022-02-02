@@ -35,7 +35,14 @@ class SignController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'username' => 'required|min:5|max:50|unique:users',
+            'email' => 'required|email:dns|max:50|min:10',
+            'password' => 'required|min:5|max:50',
+            'confirmpassword' => 'required|min:5|max:50|same:password',
+            'isAgree' => 'accepted'
+        ]);
+        $validated['password'] = bcrypt($validated['password']);
     }
 
     /**

@@ -4,6 +4,10 @@
 .font-poppins {
     font-family: "Poppins", sans-serif;
 }
+.font-poppins2 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 200 !important;
+}
 .font-courier {
     font-family: "courier";
 }
@@ -29,7 +33,7 @@
     background-color: #797ad2 !important;
 }
 .bg-main3 {
-    background-color: #eae5f1 !important;
+    background-color: #ededed !important;
 }
 .border-rd {
     border-radius: 30px !important;
@@ -47,12 +51,12 @@
     width: 200px !important;
 }
 .aktif {
-    background-color: #674ea7 !important;
+    background-color: #797ad2 !important;
     color: white !important;
 }
 .nav-sign a:hover {
     background-color: white !important;
-    color: #674ea7 !important;
+    color: #797ad2 !important;
     transition: 0.7s !important;
 }
 .profile {
@@ -199,6 +203,18 @@ a {
     margin-top: -11px !important;
     position: absolute;
 }
+
+/* 
+.bg-main {
+    background-color: #674ea7 !important;
+}
+.bg-main2 {
+    background-color: #797ad2 !important;
+}
+.bg-main3 {
+    background-color: #ededed !important;
+}
+ */
 
 /* From cssbuttons.io */
 .c-button {

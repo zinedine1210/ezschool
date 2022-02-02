@@ -9,16 +9,28 @@
                 <a href="/get-started-in" class="login border-rd p-2 text-main text-center font-poppins aktif">Login</a>
             </div>
         </div>
-        <form action="">
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control font-courier" id="floatingInput" placeholder="name@example.com"
-                    required autocomplete="off">
-                <label for="floatingInput" class="font-poppins text-main"><small>Enter your username or email</small></label>
+        <form action="/get-started-in" method="POST" class="needs-validation" novalidate>
+            @csrf
+            <div class="form-floating mb-4">
+                <input type="email" class="form-control font-courier @error('email') is-invalid @enderror"
+                    value="{{ old('email') }}" id="email" name="email" placeholder="name@example.com" required
+                    autocomplete="off" autofocus>
+                <label for="email" class="font-poppins text-main"><small>Enter your email</small></label>
+                @error('email')
+                    <div class="invalid-feedback font-poppins">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
-            <div class="form-floating mb-3">
-                <input type="password" class="form-control font-courier" id="floatingInput" placeholder="name@example.com"
-                    required autocomplete="off">
-                <label for="floatingInput" class="font-poppins text-main"><small>Enter your password</small></label>
+            <div class="form-floating mb-4">
+                <input type="password" class="form-control font-courier @error('password') is-invalid @enderror"
+                    id="password" name="password" placeholder="name@example.com" required autocomplete="off">
+                <label for="password" class="font-poppins text-main"><small>Enter your password</small></label>
+                @error('password')
+                    <div class="invalid-feedback font-poppins">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
             <a href="/" class="font-poppins text-main text-end d-block forgot"><small>Forgot password<i
                         class="far fa-question-circle ms-1 text-main2"></i></small></a>
@@ -44,8 +56,9 @@
 
 
 
-    <section id="atas" class="bg-main p-4">
+    <section id="atas" class="bg-main2 p-4">
         <h5 class="text-white font-poppins">EzSchool</h5>
+
         <div class="row mt-5">
             <div class="col-md-4 ms-4">
                 <h3 class="font-poppins text-white fw-bold">Sign In To
@@ -74,7 +87,7 @@
                     </form>
                     <img src="images/foto.jpg" alt="foto" class="img-fluid rounded-circle mx-auto mb-1" width="76">
                     <h6 class="font-poppins fw-bold text-main">Zinedine Ziddan Fahdlevy</h6>
-                    <small class="text-muted lead font-courier">Active 1 Days Ago</small>
+                    <small class="text-muted lead font-courier fw-bold">Active 1 Days Ago</small>
                 </span>
             </div>
         </div>

@@ -10,43 +10,74 @@
                 <a href="/get-started-in" class="login border-rd p-2 text-main text-center font-poppins">Login</a>
             </div>
         </div>
-        <form action="">
+        <form action="/get-started-up" method="POST" class="needs-validation" novalidate>
+            @csrf
             <div class="form-floating mb-4">
-                <input type="email" class="form-control font-courier" id="floatingInput" placeholder="name@example.com"
-                    required autocomplete="off">
-                <label for="floatingInput" class="font-poppins text-main"><small>Enter your email</small></label>
+                <input type="email" class="form-control font-courier @error('email') is-invalid @enderror"
+                    value="{{ old('email') }}" id="email" name="email" placeholder="name@example.com" required
+                    autocomplete="off" autofocus>
+                <label for="email" class="font-poppins text-main"><small>Enter your email</small></label>
+                @error('email')
+                    <div class="invalid-feedback font-poppins">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
             <div class="form-floating mb-4">
-                <input type="email" class="form-control font-courier" id="floatingInput" placeholder="name@example.com"
-                    required autocomplete="off">
-                <label for="floatingInput" class="font-poppins text-main"><small>Enter your username</small></label>
+                <input type="text" class="form-control font-courier @error('username') is-invalid @enderror"
+                    value="{{ old('username') }}" id="username" name="username" placeholder="name@example.com" required
+                    autocomplete="off">
+                <label for="username" class="font-poppins text-main"><small>Enter your username</small></label>
+                @error('username')
+                    <div class="invalid-feedback font-poppins">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
             <div class="row mb-4">
                 <div class="col">
                     <div class="form-floating mb-4">
-                        <input type="password" class="form-control font-courier" id="floatingInput"
-                            placeholder="name@example.com" required autocomplete="off">
-                        <label for="floatingInput" class="font-poppins text-main"><small>Enter your password</small></label>
+                        <input type="password" class="form-control font-courier @error('password') is-invalid @enderror"
+                            id="password" name="password" placeholder="name@example.com" required autocomplete="off">
+                        <label for="password" class="font-poppins text-main"><small>Enter your password</small></label>
+                        @error('password')
+                            <div class="invalid-feedback font-poppins">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
                 </div>
                 <div class="col">
                     <div class="form-floating mb-4">
-                        <input type="password" class="form-control font-courier" id="floatingInput"
-                            placeholder="name@example.com" required autocomplete="off">
-                        <label for="floatingInput" class="font-poppins text-main"><small>Confirm your
+                        <input type="password"
+                            class="form-control font-courier @error('confirmpassword') is-invalid @enderror"
+                            id="confirmpassword" name="confirmpassword" placeholder="name@example.com" required
+                            autocomplete="off">
+                        <label for="confirmpassword" class="font-poppins text-main"><small>Confirm your
                                 password</small></label>
+                        @error('confirmpassword')
+                            <div class="invalid-feedback font-poppins">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
                 </div>
             </div>
             <div class="row mb-4">
                 <div class="col-md-1">
-                    <input type="checkbox" id="_checkbox">
+                    <input type="checkbox" name="isAgree" class="@error('isAgree') is-invalid @enderror" id="_checkbox">
                     <label for="_checkbox" id="label">
                         <div id="tick_mark"></div>
                     </label>
+                    @error('isAgree')
+                        <div class="invalid-feedback font-poppins" style="display: inline-block; width:300px;">
+                            You must agree before submitting
+                        </div>
+                    @enderror
                 </div>
                 <div class="col-md-9">
-                    <label for="_checkbox" class="font-poppins text-main cookie"><small>Agree with terms and accept all
+                    <label for="_checkbox" class="font-poppins text-main cookie"><small>I agree with terms of service and
+                            accept all
                             cookies</small></label>
                 </div>
             </div>
@@ -72,7 +103,7 @@
 
 
 
-    <section id="atas" class="bg-main p-4">
+    <section id="atas" class="bg-main2 p-4">
         <h5 class="text-white font-poppins">EzSchool</h5>
         <div class="row mt-5">
             <div class="col-md-4 ms-4">
@@ -101,8 +132,9 @@
                         <button class="delete p-0"><i class="fas fa-times text-main mx-auto"></i></button>
                     </form>
                     <img src="images/foto.jpg" alt="foto" class="img-fluid rounded-circle mx-auto mb-1" width="76">
-                    <h6 class="font-poppins fw-bold text-main">Zinedine Ziddan Fahdlevy</h6>
-                    <small class="text-muted lead font-courier">Active 1 Days Ago</small>
+                    <h6 class="font-poppins fw-bold text-main" style="overflow: hidden;height: 35px;">Zinedine Ziddan
+                        Fahdlevy</h6>
+                    <small class="text-muted lead font-courier fw-bold">Active 1 Days Ago</small>
                 </span>
             </div>
         </div>
