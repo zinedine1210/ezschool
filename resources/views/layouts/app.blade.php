@@ -246,6 +246,7 @@
     </footer>
     {{-- akhir footer --}}
 
+
     <!-- Javascript -->
 
     <!-- GSAP -->
