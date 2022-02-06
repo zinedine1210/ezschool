@@ -5,7 +5,7 @@
     <div class="jumbotron jumbotron-fluid">
         <div class="container text-center">
             <h1 class="display-4 font-poppins text-white" data-aos="zoom-out" data-aos-once="true">WE'RE CREATIVE SCHOOL</h1>
-            <p class="font-courier text-white">We provide school needs in digital form so that we can streamline the
+            <p class="font-montserrat text-white">We provide school needs in digital form so that we can streamline the
                 activities of students and teachers in the form of Web applications
             </p>
         </div>
@@ -24,12 +24,12 @@
                         <div class="col-md-5 mt-2">
                             <img src="images/library.png" alt="library" class="img-fluid icon-panel float-start me-3">
                             <h6 class="font-poppins text-main">E - Perpustakaan</h6>
-                            <p class="text-muted font-courier">Providing digital school books.</p>
+                            <p class="text-muted font-montserrat">Providing digital school books.</p>
                         </div>
                         <div class="col-md-5 mt-2 ">
                             <img src="images/stationery.png" alt="library" class="img-fluid icon-panel float-start me-3">
-                            <h6 class="font-poppins text-main">E - Koperasi</h6>
-                            <p class="text-muted font-courier">Provide a lot of school supplies.</p>
+                            <h6 class="font-poppins text-main">E - Cooperative</h6>
+                            <p class="text-muted font-montserrat">Provide a lot of school supplies.</p>
                         </div>
                     </div>
                 </div>
@@ -53,22 +53,22 @@
                     <div class="col-md-5 text-center text-white info-number m-3" data-aos-offset="300"
                         data-aos="zoom-in-down">
                         <h1 class="font-poppins fw-bold display-4 text-main">1.902</h1>
-                        <h5 class="font-courier text-main3">Guests</h5>
+                        <h5 class="font-montserrat text-main3">Guests</h5>
                     </div>
                     <div class="col-md-5 text-center text-white info-number m-3" data-aos-offset="300"
                         data-aos="zoom-in-down">
                         <h1 class="font-poppins fw-bold display-4 text-main">753</h1>
-                        <h5 class="font-courier text-main3">Clients</h5>
+                        <h5 class="font-montserrat text-main3">Clients</h5>
                     </div>
                     <div class="col-md-5 text-center text-white info-number m-3" data-aos-offset="200"
                         data-aos="zoom-in-up">
                         <h1 class="font-poppins fw-bold display-4 text-main">657</h1>
-                        <h5 class="font-courier text-main3">Books</h5>
+                        <h5 class="font-montserrat text-main3">Books</h5>
                     </div>
                     <div class="col-md-5 text-center text-white info-number m-3" data-aos-offset="200"
                         data-aos="zoom-in-up">
                         <h1 class="font-poppins fw-bold display-4 text-main">3.972</h1>
-                        <h5 class="font-courier text-main3">Things</h5>
+                        <h5 class="font-montserrat text-main3">Things</h5>
                     </div>
                 </div>
             </div>

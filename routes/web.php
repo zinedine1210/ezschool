@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ChangePasswordController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SignController;
 use App\Http\Controllers\LoginController;
@@ -15,8 +16,24 @@ use App\Http\Controllers\LoginController;
 |
 */
 
+
 Route::get('/', function () {
     return view('index');
+})->name('login');
+
+Route::middleware(['guest'])->group(function () {
+    Route::post('/verification', [LoginController::class, 'verification']);
+    Route::get('/get-started-in', [LoginController::class, 'index']);
+    Route::post('/get-started-in', [LoginController::class, 'authenticate']);
+    Route::resource('/get-started-up', SignController::class);
+
+    // forgot password
+    Route::get('/forgot-my-password', [ChangePasswordController::class, 'identification']);
+    Route::post('/verification-my-password', [ChangePasswordController::class, 'verification']);
+    Route::post('/process', [ChangePasswordController::class, 'store']);
+    Route::post('/change-password', [ChangePasswordController::class, 'changepassword']);
 });
-Route::get('/get-started-in', [LoginController::class, 'index']);
-Route::resource('/get-started-up', SignController::class);
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/gate', [LoginController::class, 'gate']);
+});

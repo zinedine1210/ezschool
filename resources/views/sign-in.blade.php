@@ -15,9 +15,9 @@
                 <input type="email" class="form-control font-courier @error('email') is-invalid @enderror"
                     value="{{ old('email') }}" id="email" name="email" placeholder="name@example.com" required
                     autocomplete="off" autofocus>
-                <label for="email" class="font-poppins text-main"><small>Enter your email</small></label>
+                <label for="email" class="font-poppins text-main3"><small>Enter your email</small></label>
                 @error('email')
-                    <div class="invalid-feedback font-poppins">
+                    <div class="invalid-feedback font-courier">
                         {{ $message }}
                     </div>
                 @enderror
@@ -25,16 +25,16 @@
             <div class="form-floating mb-4">
                 <input type="password" class="form-control font-courier @error('password') is-invalid @enderror"
                     id="password" name="password" placeholder="name@example.com" required autocomplete="off">
-                <label for="password" class="font-poppins text-main"><small>Enter your password</small></label>
+                <label for="password" class="font-poppins text-main3"><small>Enter your password</small></label>
                 @error('password')
-                    <div class="invalid-feedback font-poppins">
+                    <div class="invalid-feedback font-courier">
                         {{ $message }}
                     </div>
                 @enderror
             </div>
-            <a href="/" class="font-poppins text-main text-end d-block forgot"><small>Forgot password<i
+            <a href="/forgot-my-password" class="font-poppins text-main2 text-end d-block forgot"><small>Forgot password<i
                         class="far fa-question-circle ms-1 text-main2"></i></small></a>
-            <button class="c-button c-button--gooey mb-2" style="margin-top: 150px;"> Sign Up
+            <button class="c-button c-button--gooey mb-2" style="margin-top: 150px;"> Sign In
                 <div class="c-button__blobs">
                     <div></div>
                     <div></div>
@@ -60,17 +60,17 @@
         <h5 class="text-white font-poppins">EzSchool</h5>
 
         <div class="row mt-5">
-            <div class="col-md-4 ms-4">
+            <div class="col-md-3 ms-4">
                 <h3 class="font-poppins text-white fw-bold">Sign In To
                 </h3>
-                <h6 class="font-poppins text-white mb-4 lead">Lorem ipsum dolor sit
+                <h6 class="font-poppins text-white mb-4 lead">EzSchool is simply
                     </h3>
-                    <p class="font-courier text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae illo
-                        eveniet, sed maiores, sapiente repellendus soluta autem nobis animi, mollitia voluptatem libero
-                        adipisci
+                    <p class="font-montserrat text-white">Borrowing books without hassle and buy things quickly at the
+                        school cooperative with EzSchool. EzSchool make your school life easier, what are you waiting for?
+                        Let's join us now!
                     </p>
             </div>
-            <img src="images/vektor.png" alt="vektor" class="img-fluid vektor">
+            <img src="images/gif.gif" alt="vektor" class="img-fluid vektor">
         </div>
     </section>
 
@@ -87,7 +87,7 @@
                     </form>
                     <img src="images/foto.jpg" alt="foto" class="img-fluid rounded-circle mx-auto mb-1" width="76">
                     <h6 class="font-poppins fw-bold text-main">Zinedine Ziddan Fahdlevy</h6>
-                    <small class="text-muted lead font-courier fw-bold">Active 1 Days Ago</small>
+                    <small class="text-muted lead font-montserrat fw-bold">Active 1 Days Ago</small>
                 </span>
             </div>
         </div>
