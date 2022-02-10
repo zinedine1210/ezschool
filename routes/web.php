@@ -36,4 +36,8 @@ Route::middleware(['guest'])->group(function () {
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/gate', [LoginController::class, 'gate']);
+
+
+    Route::get('/cooperative', [LoginController::class, 'cooperative']);
+    Route::get('/library', [LoginController::class, 'library']);
 });

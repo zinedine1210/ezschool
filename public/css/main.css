@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@200;400;600&display=swap");
+/* utility */
+.font-poppins {
+    font-family: "Poppins", sans-serif;
+}
+.font-courier {
+    font-family: "courier";
+}
+.font-montserrat {
+    font-family: "Montserrat Alternates", sans-serif;
+}
+.gradient {
+    background: linear-gradient(to left, #674ea7, #8470b5) !important;
+}
+.text-main {
+    color: #674ea7 !important;
+}
+.text-main2 {
+    color: #ff1cb3 !important;
+}
+.text-main3 {
+    color: #4a4a4a !important;
+}
+.bg-main {
+    background-color: #674ea7 !important;
+}
+.bg-main2 {
+    background-color: #f3f3f3 !important;
+}
+.bg-main3 {
+    background-color: #dfdfe3 !important;
+}
+.border-rd {
+    border-radius: 30px !important;
+}
+
+/* akhir utilty */
+a {
+    text-decoration: none !important;
+    color: white !important;
+}
+
+.hero {
+    margin-top: 100px !important;
+}
+.navbar-brand img {
+    width: 200px !important;
+}
+.profil {
+    border: 3px solid #674ea7 !important;
+    border-radius: 50% !important;
+    width: 40px !important;
+    height: 40px !important;
+    display: block;
+    overflow: hidden !important;
+}
+#basic-addon1 {
+    border-right: none !important;
+}
+.search {
+    border-left: none !important;
+}
+.jumbotron {
+    height: 500px !important;
+    overflow: hidden !important;
+    z-index: -999 !important;
+}
+.info-panel {
+    background-color: white !important;
+    position: absolute !important;
+    width: 300px !important;
+    height: 400px !important;
+    z-index: 1 !important;
+    left: 80px !important;
+    top: 90px !important;
+    opacity: 0.9 !important;
+}
+body {
+    background-color: #dfdfe3 !important;
+}
+#panel .row .col-md-3 img {
+    width: 60px !important;
+}
+#panel {
+    margin-top: 80px !important;
+    margin-bottom: 80px !important;
+}
+
+.kartu {
+    background-color: #c6c6eb !important;
+    width: 295px !important;
+    height: 500px !important;
+    position: relative !important;
+}
+.gambar {
+    width: 295px !important;
+    height: 295px !important;
+    overflow: hidden !important;
+}
+.gambar img {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.diskon {
+    position: absolute !important;
+    width: 50px !important;
+    height: 50px !important;
+    display: block;
+    border-radius: 50% !important;
+    top: 20px !important;
+    right: 20px !important;
+    padding-top: 14px !important;
+    padding-left: 5px !important;
+}
+
+.judul {
+    width: 270px !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+    text-overflow: ellipsis;
+}
+section {
+    padding: 80px 0 !important;
+    margin: 50px 0 !important;
+}
+
+hr {
+    border: 3px solid white !important;
+}

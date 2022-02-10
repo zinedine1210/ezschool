@@ -65,4 +65,12 @@ class LoginController extends Controller
     {
         return view('gate');
     }
+    public function cooperative()
+    {
+        return view('cooperative.index');
+    }
+    public function library()
+    {
+        return view('library.index');
+    }
 }

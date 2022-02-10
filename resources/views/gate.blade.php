@@ -87,12 +87,12 @@
     </div>
 
     <div class="row justify-content-center mt-4">
-        <a class="col-md-3 border-rd p-4 me-2 hvr-float-shadow">
+        <a class="col-md-3 border-rd p-4 me-2 hvr-float-shadow" href="/cooperative">
             <img src="images/stationery.png" alt="koperasi" class="img-fluid logo float-start me-3">
             <h6 class="font-poppins text-main fw-bold">E - Cooperative</h6>
             <p class="font-montserrat text-main"><small>Provide a lot of school supplies.</small></p>
         </a>
-        <a class="col-md-3 border-rd p-4 hvr-float-shadow">
+        <a class="col-md-3 border-rd p-4 hvr-float-shadow" href="/library">
             <img src="images/library.png" alt="perpustakaan" class="img-fluid logo float-start me-3">
             <h6 class="font-poppins text-main fw-bold">E - Library</h6>
             <p class="font-montserrat text-main"><small>Providing digital school books.</small></p>
