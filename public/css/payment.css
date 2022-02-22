@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@200;400;600&display=swap");
+
+/* utility */
+
+.font-poppins {
+    font-family: "Poppins", sans-serif;
+}
+
+.font-courier {
+    font-family: "courier";
+}
+
+.font-montserrat {
+    font-family: "Montserrat Alternates", sans-serif;
+}
+
+.gradient {
+    background: linear-gradient(to right, #674ea7, #9e8fc3) !important;
+}
+
+.text-main {
+    color: #674ea7 !important;
+}
+
+.text-main2 {
+    color: #ff1cb3 !important;
+}
+
+.text-main3 {
+    color: #4a4a4a !important;
+}
+
+.bg-main {
+    background-color: #674ea7 !important;
+}
+
+.bg-main2 {
+    background-color: #f3f3f3 !important;
+}
+
+.bg-main3 {
+    background-color: #dfdfe3 !important;
+}
+
+.border-rd {
+    border-radius: 20px !important;
+}
+
+
+/* akhir utilty */
+
+a {
+    text-decoration: none !important;
+    color: white !important;
+}
+
+.formaddress {
+    height: 500px !important;
+    overflow-y: scroll !important;
+}
+
+#atas {
+    height: 650px !important;
+}
+
+#bawah {
+    background-color: #DFDFE3;
+    height: 650px !important
+}
+
+.kartu {
+    width: 90% !important;
+    height: 180px !important;
+    padding: 10px !important;
+    overflow: hidden !important;
+    justify-content: center !important;
+}
+
+.kotak {
+    display: inline-block !important;
+    width: 150px !important;
+    height: 150px !important;
+    overflow: hidden !important;
+}
+
+.bawahinfo {
+    height: 250px !important;
+    overflow-y: scroll !important;
+}
+
+.form-check-label img {
+    width: 40px !important;
+}

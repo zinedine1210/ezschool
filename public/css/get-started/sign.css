@@ -109,6 +109,58 @@ a {
     margin-top: 50px !important;
 }
 
+
+/* mobile */
+@media screen and (max-width: 760px){
+#atas {
+    height: 700px !important;
+}
+#bawah {
+    height: 700px !important;
+    padding-top: 500px !important;
+}
+.kotak-form {
+    position: absolute !important;
+    width: 85% !important;
+    top: 500px !important;
+    z-index: 999 !important;
+    align-items: center !important;
+}
+
+.register {
+    width: 100% !important;
+    font-size: 14px !important;
+}
+
+.login {
+    width: 100% !important;
+    font-size: 14px !important;
+}
+.nav-sign {
+    width: 300px !important;
+}
+
+p{
+    font-size: 12px !important;
+}
+
+h3{
+    font-size: 20px !important;
+}
+
+h6{
+    font-size: 15px !important;
+}
+
+label {
+    font-size: 13px !important;
+}
+.vektor {
+    width: 350px !important;
+    margin-top: 100px !important;
+}
+}
+
 /* From cssbuttons.io by @Custyyyy */
 #_checkbox {
     display: none;

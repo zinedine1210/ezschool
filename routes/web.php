@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\ChangePasswordController;
+use App\Http\Controllers\InfoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SignController;
 use App\Http\Controllers\LoginController;
@@ -40,4 +42,10 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/cooperative', [LoginController::class, 'cooperative']);
     Route::get('/library', [LoginController::class, 'library']);
+
+    Route::get('/my-cart', [CartController::class, 'index']);
+
+    Route::get('/product', [InfoController::class, 'index']);
+    Route::get('/address', [InfoController::class, 'address']);
+    Route::get('/shipment-method', [InfoController::class, 'shipment']);
 });

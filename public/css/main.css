@@ -1,52 +1,64 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@200;400;600&display=swap");
+
 /* utility */
+
 .font-poppins {
     font-family: "Poppins", sans-serif;
 }
+
 .font-courier {
     font-family: "courier";
 }
+
 .font-montserrat {
     font-family: "Montserrat Alternates", sans-serif;
 }
+
 .gradient {
-    background: linear-gradient(to left, #674ea7, #8470b5) !important;
+    background: linear-gradient(to right, #674ea7, #9e8fc3) !important;
 }
+
 .text-main {
     color: #674ea7 !important;
 }
+
 .text-main2 {
     color: #ff1cb3 !important;
 }
+
 .text-main3 {
     color: #4a4a4a !important;
 }
+
 .bg-main {
     background-color: #674ea7 !important;
 }
+
 .bg-main2 {
     background-color: #f3f3f3 !important;
 }
+
 .bg-main3 {
     background-color: #dfdfe3 !important;
 }
+
 .border-rd {
-    border-radius: 30px !important;
+    border-radius: 20px !important;
 }
 
+
 /* akhir utilty */
+
 a {
     text-decoration: none !important;
     color: white !important;
 }
 
-.hero {
-    margin-top: 100px !important;
-}
 .navbar-brand img {
     width: 200px !important;
 }
+
 .profil {
     border: 3px solid #674ea7 !important;
     border-radius: 50% !important;
@@ -55,17 +67,21 @@ a {
     display: block;
     overflow: hidden !important;
 }
+
 #basic-addon1 {
     border-right: none !important;
 }
+
 .search {
     border-left: none !important;
 }
+
 .jumbotron {
     height: 500px !important;
     overflow: hidden !important;
     z-index: -999 !important;
 }
+
 .info-panel {
     background-color: white !important;
     position: absolute !important;
@@ -76,12 +92,15 @@ a {
     top: 90px !important;
     opacity: 0.9 !important;
 }
+
 body {
     background-color: #dfdfe3 !important;
 }
+
 #panel .row .col-md-3 img {
     width: 60px !important;
 }
+
 #panel {
     margin-top: 80px !important;
     margin-bottom: 80px !important;
@@ -92,12 +111,21 @@ body {
     width: 295px !important;
     height: 500px !important;
     position: relative !important;
+    padding: 0 !important;
 }
+
+.kartu figure {
+    overflow: hidden !important;
+    width: 100% !important;
+    height: 295px !important;
+}
+
 .gambar {
     width: 295px !important;
     height: 295px !important;
     overflow: hidden !important;
 }
+
 .gambar img {
     width: 100% !important;
     height: 100% !important;
@@ -116,16 +144,237 @@ body {
 }
 
 .judul {
-    width: 270px !important;
+    width: 100% !important;
     overflow: hidden !important;
     white-space: nowrap !important;
     text-overflow: ellipsis;
 }
+
 section {
-    padding: 80px 0 !important;
+    padding: 40px 0 80px !important;
     margin: 50px 0 !important;
 }
 
 hr {
     border: 3px solid white !important;
+}
+
+.labelproduk {
+    border-bottom: 2px solid #674ea7 !important;
+    border-radius: 10px !important;
+    padding: 10px 0 0 10px;
+}
+
+#demo {
+    margin-top: -30px !important;
+}
+
+.deskripsiproduk {
+    font-size: 15px !important;
+}
+
+.hargaproduk {
+    font-size: 15px !important;
+}
+
+.detailproduk {
+    font-size: 12px !important;
+}
+
+.barang {
+    border-bottom: 1px solid rgb(172, 172, 172);
+}
+
+#alamat {
+    width: 35% !important;
+    border-radius: 15px !important;
+}
+
+.detail {
+    width: 100% !important;
+    height: 320px !important;
+    overflow-y: scroll;
+    position: relative;
+}
+
+.slider {
+    width: 450px !important;
+    height: 450px !important;
+    overflow: hidden !important;
+}
+
+.slider img {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.list-group {
+    width: 200px !important;
+    position: absolute !important;
+    top: 0 !important;
+    right: 20px !important;
+}
+
+footer {
+    padding-bottom: 120px !important;
+    padding-top: 30px !important;
+}
+
+.bar1 {
+    background-color: gold !important;
+}
+
+.ulasan img {
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50% !important;
+    border: 2px solid red !important;
+}
+
+.bungkusanulasan {
+    height: 400px !important;
+    overflow-x: hidden !important;
+}
+
+.komentarpribadi {
+    width: 100% !important;
+    height: 220px !important;
+    overflow-x: hidden !important;
+    border: 1px solid rgb(141, 141, 141) !important;
+    border-radius: 15px !important;
+}
+
+.komentarpribadi .komentar {
+    width: 90% !important;
+    background-color: white !important;
+}
+
+.komentarpribadi .komentar p {
+    font-size: 11px !important;
+}
+
+figure figcaption .row .col-6 button i {
+    font-size: 30px !important;
+}
+
+figure .mobileadd {
+    display: none !important;
+}
+
+@media screen and (max-width: 760px) {
+    h1 {
+        font-size: 20px !important;
+    }
+    h2 {
+        font-size: 18px !important;
+    }
+    h3 {
+        font-size: 16px !important;
+    }
+    h4 {
+        font-size: 14px !important;
+    }
+    h5 {
+        font-size: 12px !important;
+    }
+    h6 {
+        font-size: 10px !important
+    }
+    p {
+        font-size: 12px !important;
+    }
+    button {
+        font-size: 10px !important;
+    }
+    small {
+        font-size: 10px !important;
+    }
+    .info-panel {
+        background-color: white !important;
+        position: relative !important;
+        width: 200px !important;
+        height: 220px !important;
+        z-index: 1 !important;
+        left: 50px !important;
+        top: 50px !important;
+        opacity: 0.9 !important;
+    }
+    .info-panel h3,
+    .info-panel h6,
+    .info-panel button {
+        margin: 10px 0 !important;
+    }
+    .jumbotron {
+        margin-top: -80px !important;
+        height: 200px !important;
+    }
+    section {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    .carousel-item img {
+        height: 200px !important;
+    }
+    #panel .col-md-3 img {
+        float: none !important;
+        margin-left: 10px !important;
+    }
+    #panel {
+        text-align: center !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+    #alamat {
+        width: 90% !important;
+    }
+    .kartu {
+        width: 40% !important;
+        height: 230px !important;
+        position: relative !important;
+        padding: 0 !important;
+    }
+    .kartu figure {
+        width: 100% !important;
+        height: 150px !important;
+    }
+    .kartu .card-body {
+        padding: 2px 5px !important;
+        margin: 0 !important;
+    }
+    .kartu .card-body p,
+    .kartu .card-body h4,
+    .kartu .card-body h5,
+    .kartu .card-body h6,
+    .kartu .card-body small {
+        margin: 2px 0 !important;
+        padding: 0 !important;
+        font-size: 9px !important;
+    }
+    .judul {
+        width: 100% !important;
+    }
+    .kartu span {
+        font-size: 10px !important;
+        width: 30px !important;
+        height: 30px !important;
+        top: 5px !important;
+        padding: 7px 0 0 3px!important;
+        right: 5px !important;
+    }
+    .infodeskripsi {
+        width: 100% !important;
+        overflow: hidden !important;
+        white-space: nowrap !important;
+        text-overflow: ellipsis;
+    }
+    section {
+        margin-bottom: 100px !important;
+        padding: 30px 0 !important;
+    }
+    figure .webadd {
+        display: none !important;
+    }
+    figure .mobileadd {
+        display: block !important;
+    }
 }

@@ -57,7 +57,7 @@
 
             <a href="" class="mx-3 text-dark" data-bs-target="tooltip" title="Like"><i
                     class="far fa-heart text-main3 fs-4"></i></a>
-            <a href="" class="mx-3 text-dark position-relative" data-bs-target="tooltip" title="Your Cart"><i
+            <a href="/my-cart" class="mx-3 text-dark position-relative" data-bs-target="tooltip" title="Your Cart"><i
                     class="fab fa-opencart text-main3 fs-4"></i>
                 <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                     2

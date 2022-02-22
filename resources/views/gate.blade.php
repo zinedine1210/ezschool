@@ -75,6 +75,18 @@
             background-color: #ededed;
         }
 
+        @media screen and (max-width: 760px) {
+            .kotak {
+                width: 80%;
+                left: 50px;
+                top: 20px;
+            }
+
+            h1 {
+                margin-top: 180px;
+            }
+        }
+
     </style>
 </head>
 
@@ -86,13 +98,13 @@
         <img src="images/gate.gif" alt="gate" class="img-fluid gate text-center">
     </div>
 
-    <div class="row justify-content-center mt-4">
-        <a class="col-md-3 border-rd p-4 me-2 hvr-float-shadow" href="/cooperative">
+    <div class="row justify-content-center mt-4 container-fluid">
+        <a class="col-md-3 border-rd p-4 me-2 hvr-float-shadow mb-2" href="/cooperative">
             <img src="images/stationery.png" alt="koperasi" class="img-fluid logo float-start me-3">
             <h6 class="font-poppins text-main fw-bold">E - Cooperative</h6>
             <p class="font-montserrat text-main"><small>Provide a lot of school supplies.</small></p>
         </a>
-        <a class="col-md-3 border-rd p-4 hvr-float-shadow" href="/library">
+        <a class="col-md-3 border-rd p-4 hvr-float-shadow mb-2" href="/library">
             <img src="images/library.png" alt="perpustakaan" class="img-fluid logo float-start me-3">
             <h6 class="font-poppins text-main fw-bold">E - Library</h6>
             <p class="font-montserrat text-main"><small>Providing digital school books.</small></p>

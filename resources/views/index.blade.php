@@ -1,5 +1,4 @@
 @extends('layouts.app', ['title' => 'Landing Page'])
-
 @section('container')
     {{-- Jumbotron --}}
     <div class="jumbotron jumbotron-fluid">

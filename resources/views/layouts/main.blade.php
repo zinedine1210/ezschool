@@ -47,13 +47,19 @@
 <body>
     @include('partials.navbar-main')
 
-    <div class="hero">
 
-    </div>
     @yield('container')
 
 
-    <footer class="bg-dark text-white px-2 py-3">
+    <div id="alamat" class="bg-main fixed-bottom mx-auto p-3 mb-3 shadow text-white gradient">
+        <h6 class="font-poppins">Ship to :
+            <a href="" class="font-poppins float-end"><small>Change</small></a>
+        </h6>
+        <small class="font-montserrat deskripsiproduk">Kp. Gempol Rt 06/01 Cakung Timur, Jakarta Timur</small>
+    </div>
+
+
+    <footer class="bg-dark text-white px-2">
 
         <hr class="text-white">
 
@@ -61,7 +67,8 @@
             <div class="col-md-3">
                 <h1 class="font-poppins text-main fw-bold">EzSchool</h1>
                 <h5 class="font-poppins mb-4">Easy Learn, Easy Access</h5>
-                <p class="font-montserrat"><i class="fas fa-map-marker-alt me-2"></i>SMK Negeri 26 Jakarta, Indonesia</p>
+                <p class="font-montserrat"><i class="fas fa-map-marker-alt me-2"></i>SMK Negeri 26 Jakarta, Indonesia
+                </p>
                 <p class="font-montserrat"><i class="fas fa-phone-alt me-2"></i>+62 895 0878 1380</p>
                 <p class="font-montserrat mt-4">EzSchool.official@gmail.com</p>
             </div>
@@ -103,9 +110,12 @@
 
 
 
+
     <!-- Javascript -->
 
     <!-- GSAP -->
+
+    <script src="https://kit.fontawesome.com/0968712025.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/TextPlugin.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"

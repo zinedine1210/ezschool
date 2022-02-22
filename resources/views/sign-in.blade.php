@@ -9,7 +9,9 @@
                 <a href="/get-started-in" class="login border-rd p-2 text-main text-center font-poppins aktif">Login</a>
             </div>
         </div>
-        <form action="/get-started-in" method="POST" class="needs-validation" novalidate>
+
+
+        <form action="/get-started-in" method="POST" class="needs-validation w-100" novalidate>
             @csrf
             <div class="form-floating mb-4">
                 <input type="email" class="form-control font-courier @error('email') is-invalid @enderror"
@@ -59,16 +61,16 @@
     <section id="atas" class="bg-main2 p-4">
         <h5 class="text-white font-poppins">EzSchool</h5>
 
-        <div class="row mt-5">
-            <div class="col-md-3 ms-4">
+        <div class="row mt-5 container-fluid">
+            <div class="col-md-3">
                 <h3 class="font-poppins text-white fw-bold">Sign In To
                 </h3>
                 <h6 class="font-poppins text-white mb-4 lead">EzSchool is simply
-                    </h3>
-                    <p class="font-montserrat text-white">Borrowing books without hassle and buy things quickly at the
-                        school cooperative with EzSchool. EzSchool make your school life easier, what are you waiting for?
-                        Let's join us now!
-                    </p>
+                </h6>
+                <p class="font-montserrat text-white">Borrowing books without hassle and buy things quickly at the
+                    school cooperative with EzSchool. EzSchool make your school life easier, what are you waiting for?
+                    Let's join us now!
+                </p>
             </div>
             <img src="images/gif.gif" alt="vektor" class="img-fluid vektor">
         </div>
