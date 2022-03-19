@@ -47,7 +47,6 @@
     border-radius: 20px !important;
 }
 
-
 /* akhir utilty */
 
 a {
@@ -261,6 +260,73 @@ figure .mobileadd {
     display: none !important;
 }
 
+.profile {
+    width: 250px !important;
+    height: 250px !important;
+    overflow: hidden !important;
+    position: relative !important;
+}
+
+.aktif {
+    border-left: 5px solid #674ea7 !important;
+}
+
+.profile span {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    opacity: 0.7;
+    margin-bottom: -10px !important;
+    margin-right: -10px !important;
+    background-color: #f3f3f3 !important;
+    width: 65px !important;
+    height: 65px !important;
+    font-size: 30px !important;
+    border-radius: 20px !important;
+    padding: 5px !important;
+}
+
+.chat-profile {
+    height: 70px !important;
+}
+
+.chat-profile img {
+    width: 50px !important;
+}
+
+.chat {
+    height: 600px !important;
+}
+
+.chat-main {
+    height: 450px !important;
+    overflow-y: scroll;
+    overflow-x: hidden !important;
+}
+
+.history .col-md-2 {
+    width: 150px !important;
+    height: 150px !important;
+}
+
+.history {
+    height: 180px !important;
+    overflow: hidden !important;
+}
+
+.chat-message {
+    /* width: 200px; */
+    border-radius: 10px 50px 50px 25px !important;
+}
+
+.detailaddress div small span {
+    margin-left: 200px !important;
+}
+
+.chat-message h6 {
+    font-size: 12px !important;
+}
+
 @media screen and (max-width: 760px) {
     h1 {
         font-size: 20px !important;
@@ -278,7 +344,7 @@ figure .mobileadd {
         font-size: 12px !important;
     }
     h6 {
-        font-size: 10px !important
+        font-size: 10px !important;
     }
     p {
         font-size: 12px !important;
@@ -358,7 +424,7 @@ figure .mobileadd {
         width: 30px !important;
         height: 30px !important;
         top: 5px !important;
-        padding: 7px 0 0 3px!important;
+        padding: 7px 0 0 3px !important;
         right: 5px !important;
     }
     .infodeskripsi {

@@ -48,7 +48,7 @@
                                 <div class="form-floating mb-2">
                                     <input autocomplete="off" type="text" class="form-control" id="nama"
                                         placeholder="name@example.com">
-                                    <label for="nama">City</label>
+                                    <label for="nama">District</label>
                                 </div>
                             </div>
                             <div class="col">
@@ -64,7 +64,6 @@
                             <select class="form-select mb-4" aria-label=".form-select-lg example" id="nama"
                                 placeholder="name@example.com">
                                 <option value="0">DKI Jakarta</option>
-                                <option value="1">Bekasi</option>
                             </select>
                             <label for="nama">Province</label>
                         </div>

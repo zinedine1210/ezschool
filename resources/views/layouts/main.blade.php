@@ -17,9 +17,11 @@
     <link rel="shortcut icon" href="../images/Logo EzSchool.png" type="image/x-icon">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        crossorigin="anonymous" referrerpolicy="no-referrer" /> --}}
+
+    <script src="https://kit.fontawesome.com/4afc99932b.js" crossorigin="anonymous"></script>
 
 
     <!-- Bootstrap CSS -->
@@ -40,6 +42,26 @@
     {{-- Trix editor --}}
     <link rel="stylesheet" type="text/css" href="../css/trix.css">
     <script type="text/javascript" src="../js/trix.js"></script>
+    <script>
+        function initFreshChat() {
+            window.fcWidget.init({
+                token: "bfb3d5d1-f19a-4808-a0d9-39f37029822f",
+                host: "https://wchat.freshchat.com"
+            });
+        }
+
+        function initialize(i, t) {
+            var e;
+            i.getElementById(t) ? initFreshChat() : ((e = i.createElement("script")).id = t, e.async = !0, e.src =
+                "https://wchat.freshchat.com/js/widget.js", e.onload = initFreshChat, i.head.appendChild(e))
+        }
+
+        function initiateCall() {
+            initialize(document, "Freshdesk Messaging-js-sdk")
+        }
+        window.addEventListener ? window.addEventListener("load", initiateCall, !1) : window.attachEvent("load",
+            initiateCall, !1);
+    </script>
 
     <title>{{ $title }} | EzSchool</title>
 </head>

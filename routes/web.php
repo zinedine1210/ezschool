@@ -48,4 +48,15 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/product', [InfoController::class, 'index']);
     Route::get('/address', [InfoController::class, 'address']);
     Route::get('/shipment-method', [InfoController::class, 'shipment']);
+    Route::get('/edit-my-profile', [InfoController::class, 'editprofile']);
+    Route::get('/my-profile', [InfoController::class, 'profile']);
+    Route::get('/account-setting', [InfoController::class, 'account']);
+    Route::get('/chat', [InfoController::class, 'chat']);
+    Route::get('/history', [InfoController::class, 'history']);
+    Route::get('/transaksi', [InfoController::class, 'transaksi']);
+    Route::get('/my-address', [InfoController::class, 'myAddress']);
+    Route::get('/edit-my-address', [InfoController::class, 'editMyAddress']);
+
+
+    Route::post('/pay-now', [InfoController::class, "payNow"]);
 });
