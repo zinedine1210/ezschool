@@ -28,10 +28,14 @@
                 <a class="nav-link hvr-underline-from-left text-main fw-bold {{ Request::is('history') ? 'aktif' : '' }}"
                     href="/history"><i class="fa-solid fa-clock-rotate-left me-2"></i>History</a>
             </li>
-            <hr class="text-muted mb-3">
             <li class="nav-item mb-3">
                 <a class="nav-link hvr-underline-from-left text-main fw-bold {{ Request::is('account-setting') ? 'aktif' : '' }}"
                     href="/account-setting"><i class="fa-solid fa-gear me-2"></i>Account Settings</a>
+            </li>
+            <hr class="text-muted mb-3">
+            <li class="nav-item mb-3">
+                <a class="nav-link hvr-underline-from-left text-danger fw-bold " href="/logout"><i
+                        class="fa-solid fa-right-from-bracket me-2"></i>Logout</a>
             </li>
         </ul>
     </div>

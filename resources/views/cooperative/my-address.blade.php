@@ -17,7 +17,8 @@
                         <div class="col-md-8 font-poppins">
                             <h5 class="mb-2 fw-bold text-main">Your Address</h5>
                             <div class="font-poppins card my-2 border-rd py-3 px-3">
-                                <small class="bg-success text-white text-center mb-2">Main Address</small>
+                                <small class="bg-success text-white text-center mb-2"><i
+                                        class="fa-solid fa-check-double me-2"></i>Main Address</small>
                                 <h6 class="text-main">Kp. Gempol rt 06/01 Cakung timur jakarta timur</h6>
                                 <small class="text-muted">Note : Lorem ipsum dolor sit amet consectetur adipisicing
                                     elit.

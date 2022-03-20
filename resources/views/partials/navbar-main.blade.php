@@ -63,8 +63,8 @@
                     2
                     <span class="visually-hidden">Cart</span>
                 </span></a>
-            <a href="" class="text-dark ms-3 profil"><img src="images/foto.jpg" class="img-fluid" width="50"
-                    alt="foto profil"></a>
+            <a href="/my-profile" class="text-dark ms-3 profil"><img src="images/foto.jpg" class="img-fluid"
+                    width="50" alt="foto profil"></a>
         </div>
     </div>
 </nav>

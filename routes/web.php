@@ -1,11 +1,15 @@
 <?php
 
-use App\Http\Controllers\CartController;
-use App\Http\Controllers\ChangePasswordController;
-use App\Http\Controllers\InfoController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\InfoController;
 use App\Http\Controllers\SignController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ChangePasswordController;
+use App\Http\Controllers\ChatController;
+use App\Http\Controllers\KategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,4 +63,23 @@ Route::middleware(['auth'])->group(function () {
 
 
     Route::post('/pay-now', [InfoController::class, "payNow"]);
+
+
+    // ADMIN
+    Route::get("/admin", [AdminController::class, "index"]);
+    Route::resource('/admin-chat', ChatController::class);
+
+
+    Route::get("/admin-user", [AdminController::class, "user"]);
+    Route::get("/user-delete/{id}", [LoginController::class, "deleteUser"]);
+    Route::post("/user-edit", [LoginController::class, "editUser"]);
+
+    Route::get("/admin-banner", [AdminController::class, "banner"]);
+    Route::post("/admin-banner", [AdminController::class, "addBanner"]);
+    Route::get("/admin-banner/{id}", [AdminController::class, "editBanner"]);
+
+
+
+    Route::resource('/admin-products', ProductController::class);
+    Route::resource('/admin-category', KategoryController::class);
 });

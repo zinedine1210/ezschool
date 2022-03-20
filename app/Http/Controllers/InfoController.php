@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Midtrans\Snap;
 // use Tridi\Cekmutasi\Cekmutasi;
+use App\Models\Chat;
 use Midtrans\Config;
 use Illuminate\Http\Request;
 use Tridi\Cekmutasi\Cekmutasi;
@@ -38,7 +39,9 @@ class InfoController extends Controller
     }
     public function chat()
     {
-        return view("cooperative.chat");
+        return view("cooperative.chat", [
+            'chats' => Chat::where("user_id", auth()->user()->id)->get()
+        ]);
     }
     public function history()
     {

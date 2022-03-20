@@ -5,7 +5,7 @@
         <section class="col-md-6 bg-light" id="atas">
             <h5 class="text-main ms-3 fw-bold mt-4 mb-4 font-poppins">EzSchool</h5>
             <div class="row justify-content-center container-fluid">
-                <div class="col-md-11 font-poppins formaddress">
+                <div class="col-md-11 font-poppins">
                     <form action="" method="POST">
                         <h5 class="mb-3 text-main">Standard Shipping Method</h5>
                         <div class="form-floating">
@@ -45,140 +45,42 @@
                         <div class="form-check mb-2 card border-rd shadow-sm py-3">
                             <div class="row justify-content-center align-items-center">
                                 <div class="col-1 text-center">
-                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
-                                        value="option1">
+                                    <input class="form-check-input" type="radio" name="cardpayment" id="cardpayment"
+                                        value="option1" checked>
                                 </div>
-                                <div class="col-4 font-poppins fw-bold text-main">
-                                    Ovo
+                                <div class="col-7 font-poppins fw-bold text-main">
+                                    Card cashless payment
+                                    <p class="text-muted font-poppins"><small class="text-muted">Bank Transfer,
+                                            E-Wallet, Direct Debit, Store, Cardless Credit, QRIS</small></p>
+                                    <div class="bank">
+                                        <img src="images/payment/bca.png" alt="bca" width="20">
+                                        <img src="images/payment/bri.png" alt="bri" width="20">
+                                        <img src="images/payment/bni.png" alt="bni" width="20">
+                                        <img src="images/payment/mandiri.png" alt="mandiri" width="30">
+                                    </div>
+                                    <div class="store">
+                                        <img src="images/payment/alfamaret.png" alt="alfamaret" width="30">
+                                        <img src="images/payment/indomaret.png" alt="indomaret" width="30">
+                                        <img src="images/payment/alfamidi.png" alt="alfamidi" width="30">
+                                    </div>
+                                    <div class="e-wallet">
+                                        <img src="images/payment/ovo.png" alt="ovo" width="20">
+                                        <img src="images/payment/dana.png" alt="dana" width="20">
+                                        <img src="images/payment/gopay.png" alt="gopay" width="30">
+                                        <img src="images/payment/shopeepay.png" alt="shopeepay" width="30">
+
+                                    </div>
                                 </div>
-                                <div class="col-6 text-end">
-                                    <label class="form-check-label" for="exampleRadios1">
-                                        <img src="images/payment/ovo.png" alt="payment" class="img-fluid">
+                                <div class="col-3 text-end">
+                                    <label class="form-check-label" for="cardpayment">
+                                        <img src="images/payment/cashless.png" alt="payment" class="img-fluid">
                                     </label>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="form-check mb-2 card border-rd shadow-sm py-3">
-                            <div class="row justify-content-center align-items-center">
-                                <div class="col-1 text-center">
-                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2"
-                                        value="option1">
-                                </div>
-                                <div class="col-4 font-poppins fw-bold text-main">
-                                    Dana
-                                </div>
-                                <div class="col-6 text-end">
-                                    <label class="form-check-label" for="exampleRadios2">
-                                        <img src="images/payment/dana.png" alt="payment" class="img-fluid">
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-check mb-2 card border-rd shadow-sm py-3">
-                            <div class="row justify-content-center align-items-center">
-                                <div class="col-1 text-center">
-                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3"
-                                        value="option1">
-                                </div>
-                                <div class="col-4 font-poppins fw-bold text-main">
-                                    Indomaret
-                                </div>
-                                <div class="col-6 text-end">
-                                    <label class="form-check-label" for="exampleRadios3">
-                                        <img src="images/payment/indomaret.png" alt="payment" class="img-fluid">
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-check mb-2 card border-rd shadow-sm py-3">
-                            <div class="row justify-content-center align-items-center">
-                                <div class="col-1 text-center">
-                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios4"
-                                        value="option1">
-                                </div>
-                                <div class="col-4 font-poppins fw-bold text-main">
-                                    Alfamaret
-                                </div>
-                                <div class="col-6 text-end">
-                                    <label class="form-check-label" for="exampleRadios4">
-                                        <img src="images/payment/alfamaret.png" alt="payment" class="img-fluid">
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-check mb-2 card border-rd shadow-sm py-3">
-                            <div class="row justify-content-center align-items-center">
-                                <div class="col-1 text-center">
-                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios5"
-                                        value="option1">
-                                </div>
-                                <div class="col-4 font-poppins fw-bold text-main">
-                                    Bank BNI
-                                </div>
-                                <div class="col-6 text-end">
-                                    <label class="form-check-label" for="exampleRadios5">
-                                        <img src="images/payment/bni.png" alt="payment" class="img-fluid">
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-check mb-2 card border-rd shadow-sm py-3">
-                            <div class="row justify-content-center align-items-center">
-                                <div class="col-1 text-center">
-                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios6"
-                                        value="option1">
-                                </div>
-                                <div class="col-4 font-poppins fw-bold text-main">
-                                    Bank BCA
-                                </div>
-                                <div class="col-6 text-end">
-                                    <label class="form-check-label" for="exampleRadios6">
-                                        <img src="images/payment/bca.png" alt="payment" class="img-fluid">
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-check mb-2 card border-rd shadow-sm py-3">
-                            <div class="row justify-content-center align-items-center">
-                                <div class="col-1 text-center">
-                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios7"
-                                        value="option1">
-                                </div>
-                                <div class="col-4 font-poppins fw-bold text-main">
-                                    Bank Mandiri
-                                </div>
-                                <div class="col-6 text-end">
-                                    <label class="form-check-label" for="exampleRadios7">
-                                        <img src="images/payment/mandiri.png" alt="payment" class="img-fluid">
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-check mb-2 card border-rd shadow-sm py-3">
-                            <div class="row justify-content-center align-items-center">
-                                <div class="col-1 text-center">
-                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios8"
-                                        value="option1">
-                                </div>
-                                <div class="col-4 font-poppins fw-bold text-main">
-                                    Bank BRI
-                                </div>
-                                <div class="col-6 text-end">
-                                    <label class="form-check-label" for="exampleRadios8">
-                                        <img src="images/payment/bri.png" alt="payment" class="img-fluid">
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
                 </div>
-                <button class="btn bg-main d-inline w-30 fw-bold text-white font-poppins mt-4">Pay Now</button>
+                <a href="/transaksi" class="btn bg-main d-inline w-30 fw-bold text-white font-poppins mt-4">Pay Now</a>
                 </form>
             </div>
         </section>

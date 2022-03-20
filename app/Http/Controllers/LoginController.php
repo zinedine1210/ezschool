@@ -15,11 +15,27 @@ class LoginController extends Controller
     }
     public function verification(Request $request)
     {
+        $input = '01234567890123456789';
+
+        function generate_random_kode($input)
+        {
+            $input_length = strlen($input);
+            $random_string = '';
+            for ($i = 0; $i < 10; $i++) {
+                $random_character = $input[mt_rand(0, $input_length - 1)];
+                $random_string .= $random_character;
+            }
+            return $random_string;
+        }
+
+        $koderandom = generate_random_kode($input);
+
         if ($request->kode == $request->nomerkode) {
             User::create([
                 'username' => $request->username,
                 'email' => $request->email,
-                'password' => $request->password
+                'password' => $request->password,
+                'key_user' => "USR" . $koderandom
             ]);
             return redirect('/get-started-in')->with('login', 'Email verification is successful, please login!');
         } else {
@@ -59,7 +75,21 @@ class LoginController extends Controller
         return redirect('/')->with('login', 'You are logged out!!');
     }
 
+    public function deleteUser($id)
+    {
+        User::destroy($id);
+        return redirect()->back()->with("berhasil", "User deleted successfully");
+    }
 
+    public function editUser(Request $request)
+    {
+        User::where('id', $request->id)
+            ->update([
+                'isAdmin' => $request->admin
+            ]);
+
+        return redirect()->back()->with('berhasil', 'User changed successfully');
+    }
 
     public function gate()
     {

@@ -5,7 +5,7 @@
         <section class="col-md-6 bg-light" id="atas">
             <h5 class="text-main ms-3 fw-bold mt-4 mb-4 font-poppins">EzSchool</h5>
             <div class="row justify-content-center container-fluid">
-                <div class="col-md-11 font-poppins formaddress">
+                <div class="col-md-11 font-poppins">
                     <form action="" method="POST">
                         <h5 class="mb-3 text-main">Contact</h5>
                         <div class="mb-4 form-floating">
@@ -16,69 +16,20 @@
 
 
                         <h5 class="mb-3 text-main">Shipping Address</h5>
-                        <div class="row justify-content-center g-2">
-                            <div class="col">
-                                <div class="form-floating mb-2">
-                                    <input autocomplete="off" type="text" class="form-control" id="nama"
-                                        placeholder="name@example.com">
-                                    <label for="nama">First Name</label>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="form-floating mb-2">
-                                    <input autocomplete="off" type="text" class="form-control" id="nama"
-                                        placeholder="name@example.com">
-                                    <label for="nama">Last Name</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-floating mb-2">
-                            <input autocomplete="off" type="text" class="form-control" id="nama"
-                                placeholder="name@example.com">
-                            <label for="nama">Address and number</label>
-                        </div>
-                        <div class="form-floating mb-2">
-                            <input autocomplete="off" type="text" class="form-control" id="nama"
-                                placeholder="name@example.com">
-                            <label for="nama">Shipping note (optional)</label>
-                        </div>
-
-                        <div class="row justify-content-center g-2 mb-2">
-                            <div class="col">
-                                <div class="form-floating mb-2">
-                                    <input autocomplete="off" type="text" class="form-control" id="nama"
-                                        placeholder="name@example.com">
-                                    <label for="nama">District</label>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="form-floating mb-2">
-                                    <input autocomplete="off" type="number" class="form-control" id="nama"
-                                        placeholder="name@example.com">
-                                    <label for="nama">Postal Code</label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-floating mb-2">
-                            <select class="form-select mb-4" aria-label=".form-select-lg example" id="nama"
-                                placeholder="name@example.com">
-                                <option value="0">DKI Jakarta</option>
-                            </select>
-                            <label for="nama">Province</label>
-                        </div>
-
-                        <div class="form-check mb-5">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">
-                                Save this information for a future fast checkout
-                            </label>
+                        <div class="font-poppins card my-2 border-rd py-3 px-3">
+                            <small class="bg-success text-white text-center mb-2"><i
+                                    class="fas fa-solid fa-check-double me-2"></i>Main Address</small>
+                            <h6 class="text-main">Kp. Gempol rt 06/01 Cakung timur jakarta timur</h6>
+                            <small class="text-muted">Note : Lorem ipsum dolor sit amet consectetur adipisicing
+                                elit.
+                                Voluptates, a!</small>
+                            <a href="/edit-my-profile" class="text-danger mt-2" style="font-size:15px">Change Address</a>
                         </div>
 
                 </div>
                 <a href="/shipment-method" class="btn bg-main d-inline w-30 fw-bold text-white font-poppins mt-4">Go to
                     Shipping</a>
-                <button class="btn bg-main2 d-inline w-30 fw-bold text-dark font-poppins mt-2">Back to
+                <button class="btn bg-main2 d-inline w-30 fw-bold text-dark font-poppins mt-2" type="button">Back to
                     Cart</button>
                 </form>
             </div>

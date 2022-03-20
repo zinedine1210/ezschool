@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@200;400;600&display=swap");
+
+/* utility */
+
+.font-poppins {
+    font-family: "Poppins", sans-serif;
+}
+
+.font-courier {
+    font-family: "courier";
+}
+
+.font-montserrat {
+    font-family: "Montserrat Alternates", sans-serif;
+}
+
+.gradient {
+    background: linear-gradient(to left, #674ea7, #8470b5) !important;
+}
+
+.text-main {
+    color: #674ea7 !important;
+}
+
+.text-main2 {
+    color: #ff1cb3 !important;
+}
+
+.text-main3 {
+    color: #000f18 !important;
+}
+
+.bg-main {
+    background-color: #674ea7 !important;
+}
+
+.border-rd {
+    border-radius: 30px !important;
+}
+
+/* akhir utilty */
+
+a {
+    color: black !important;
+}
+
+.aktif {
+    color: red !important;
+}
+
+.navbar-brand img {
+    width: 30px !important;
+}
+
+.chat-profile {
+    height: 70px !important;
+}
+
+.chat-profile img {
+    width: 50px !important;
+}
+
+.chat {
+    height: 600px !important;
+}
+
+.chat-main {
+    height: 450px !important;
+    overflow-y: scroll;
+    overflow-x: hidden !important;
+}
+.chat-message {
+    /* width: 200px; */
+    border-radius: 10px 50px 50px 25px !important;
+}
+.chat-message h6 {
+    font-size: 12px !important;
+}
