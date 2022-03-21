@@ -110,6 +110,8 @@
     </div>
 
 
+
+
     <div class="modal fade" id="modaladdress" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
@@ -119,7 +121,9 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form action="">
+                    <form action="/my-address" method="POST">
+                        @csrf
+
                         <div class="form-floating font-poppins">
                             <input autocomplete="off" type="text" name="inputalamat"
                                 class="form-control form-control-plaintext" id="inputalamat"
@@ -139,15 +143,15 @@
                             <label for="inputwaktu" class="fw-bold">Duration</label>
                         </div>
                         <div class="form-floating font-poppins mt-4">
-                            <input autocomplete="off" type="text" name="shippingnote" class="form-control"
-                                id="shippingnote" placeholder="name@example.com">
-                            <label for="shippingnote" class="fw-bold">Shipping Note</label>
+                            <input autocomplete="off" type="text" name="note" class="form-control" id="shippingnote"
+                                placeholder="name@example.com">
+                            <label for="shippingnote" class="fw-bold">Note</label>
                         </div>
 
 
                 </div>
                 <div class="modal-footer font-poppins">
-                    <button type="button" class="btn bg-main text-white fw-bold">Save Address</button>
+                    <button type="submit" class="btn bg-main text-white fw-bold">Save Address</button>
 
                     </form>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

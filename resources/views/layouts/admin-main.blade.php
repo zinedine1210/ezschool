@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     {{-- MY CSS --}}
-    <link rel="stylesheet" href="css/admin.css">
-    <link rel="stylesheet" href="css/hover.css">
-    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/hover.css">
+    <link rel="stylesheet" href="../css/animate.css">
 
     {{-- Favicon --}}
     <link rel="shortcut icon" href="../images/Logo EzSchool.png" type="image/x-icon">
@@ -49,7 +49,7 @@
     <nav class="navbar navbar-light shadow-sm bg-light font-poppins fw-bold">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="images/Logo Ezschool.png" alt="logo" class="img-fluid me-2">
+                <img src="../images/Logo Ezschool.png" alt="logo" class="img-fluid me-2">
                 <small>Hallo Admin, Welcome Back</small>
             </a>
         </div>

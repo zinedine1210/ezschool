@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Chat;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use App\Models\Address;
 
-class ChatController extends Controller
+
+class AddressController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,12 +16,8 @@ class ChatController extends Controller
      */
     public function index()
     {
-        $collection = collect(Chat::with("user")->latest()->get());
-
-        $data = $collection->groupBy("user_id")->all();
-
-        return view("cooperative.admin.chat", [
-            'chats' => $data
+        return view("cooperative.my-address", [
+            'addresses' => Address::where("user_id", auth()->user()->id)->get()
         ]);
     }
 
@@ -42,6 +39,7 @@ class ChatController extends Controller
      */
     public function store(Request $request)
     {
+
         $input = '01234567890123456789';
 
         function generate_random_kode($input)
@@ -57,14 +55,37 @@ class ChatController extends Controller
 
         $koderandom = generate_random_kode($input);
 
-        Chat::create([
-            'chat' => $request->chat,
-            'key_chat' => "CHT" . $koderandom,
-            'role' => $request->role,
-            'user_id' => $request->user
+        if ($request->inputjarak > 10) {
+            return redirect()->back()->with("gagal", "Distance exceeds 10 km");
+        }
+
+        $youraddress = Address::where("user_id", auth()->user()->id)->count();
+        if ($youraddress == 0) {
+            Address::create([
+                'key_address' => "ADR" . $koderandom,
+                'address' => $request->inputalamat,
+                'main' => true,
+                'distance' => $request->inputjarak,
+                'duration' => $request->inputwaktu,
+                'note' => $request->note,
+                'user_id' => auth()->user()->id
+            ]);
+
+            return redirect("/my-address")->with("Address added successfully");
+        }
+
+
+        Address::create([
+            'key_address' => "ADR" . $koderandom,
+            'address' => $request->inputalamat,
+            'main' => false,
+            'distance' => $request->inputjarak,
+            'duration' => $request->inputwaktu,
+            'note' => $request->note,
+            'user_id' => auth()->user()->id
         ]);
 
-        return redirect()->back();
+        return redirect("/my-address")->with("Address added successfully");
     }
 
     /**
@@ -75,15 +96,7 @@ class ChatController extends Controller
      */
     public function show($id)
     {
-        $collection = collect(Chat::with("user")->latest()->get());
-
-        $data = $collection->groupBy("user_id")->all();
-
-        return view("cooperative.admin.admin-chat", [
-            'chatdetail' => $collection->where("user_id", $id)->groupBy("user_id")->all(),
-            'chats' => Chat::where("user_id", $id)->get(),
-            "listchats" => $data
-        ]);
+        //
     }
 
     /**
@@ -106,7 +119,25 @@ class ChatController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+
+        $data = Address::where("user_id", $id)->get();
+        foreach ($data as $d) {
+            if ($d->main) {
+                Address::where("id", $d->id)
+                    ->update([
+                        'main' => false
+                    ]);
+            }
+        }
+
+        Address::where('user_id', $id)
+            ->where('id', $request->main)
+            ->update([
+                'main' => true
+            ]);
+
+        return redirect()->back()->with("berhasil", "Main address changed successfully");
     }
 
     /**
@@ -117,7 +148,6 @@ class ChatController extends Controller
      */
     public function destroy($id)
     {
-        Chat::where("user_id", $id)->delete();
-        return redirect()->back()->with("berhasil", "Chat deleted successfully");
+        //
     }
 }

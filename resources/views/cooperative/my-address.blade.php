@@ -10,36 +10,74 @@
                     <div class="row">
                         <div class="col-md-4">
                             <div class="profile border-rd shadow-sm">
-                                <span><a href=""><i class="fa-solid fa-camera text-dark ms-2 mt-1"></i></a></span>
-                                <img src="../images/foto.jpg" alt="foto anda" class="img-fluid">
+                                {{-- <span><a href=""><i class="fa-solid fa-camera text-dark ms-2 mt-1"></i></a></span> --}}
+                                <img src="../foto-profile/{{ auth()->user()->profile }}" alt="foto anda"
+                                    class="img-fluid">
                             </div>
                         </div>
                         <div class="col-md-8 font-poppins">
                             <h5 class="mb-2 fw-bold text-main">Your Address</h5>
-                            <div class="font-poppins card my-2 border-rd py-3 px-3">
-                                <small class="bg-success text-white text-center mb-2"><i
-                                        class="fa-solid fa-check-double me-2"></i>Main Address</small>
-                                <h6 class="text-main">Kp. Gempol rt 06/01 Cakung timur jakarta timur</h6>
-                                <small class="text-muted">Note : Lorem ipsum dolor sit amet consectetur adipisicing
-                                    elit.
-                                    Voluptates, a!</small>
-                            </div>
-                            <div class="font-poppins card my-2 border-rd py-3 px-3">
-                                <h6 class="text-main">Pengarengan Timur Raya indonesia rt 09/90 Cakung Selatan</h6>
-                                <small class="text-muted">Note : Lorem ipsum dolor sit amet consectetur adipisicing
-                                    elit.
-                                    Voluptates, a!</small>
-                            </div>
 
-
+                            @if ($addresses->count() > 0)
+                                @foreach ($addresses as $address)
+                                    <div class="font-poppins card my-2 border-rd py-3 px-3">
+                                        @if ($address->main)
+                                            <small class="bg-success text-white text-center mb-2"><i
+                                                    class="fa-solid fa-check-double me-2"></i>Main Address</small>
+                                        @endif
+                                        <h6 class="text-main">{{ $address->address }}</h6>
+                                        <small class="text-muted">Note : {{ $address->note }}</small>
+                                    </div>
+                                @endforeach
+                            @else
+                                {{-- gambar --}}
+                            @endif
 
                             <a href="/edit-my-address" class="btn bg-main text-white mt-3 rounded"><i
-                                    class="fa-solid fa-map-pin me-2"></i>Change
-                                Address</a>
+                                    class="fa-solid fa-map-pin me-2"></i>Add Address</a>
+
+                            <button class="btn btn-success text-white ms-2 mt-3 rounded" data-bs-target="#modalubahaddress"
+                                data-bs-toggle="modal">Change Main Address</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+
+
+
+    <!-- Modal -->
+
+
+    <div class="modal fade" id="modalubahaddress" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Address List</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="/my-address/{{ auth()->user()->id }}" method="POST">
+                        @csrf
+                        @method("put")
+                        <h6 class="text-muted">Select your main address</h6>
+                        <select class="form-select" multiple aria-label="multiple select example" name="main">
+
+                            @foreach ($addresses as $address)
+                                <option value="{{ $address->id }}" @if ($address->main) selected @endif>
+                                    {{ $address->address }}</option>
+                            @endforeach
+
+                        </select>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                    </form>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection

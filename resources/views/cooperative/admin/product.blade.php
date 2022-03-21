@@ -255,7 +255,7 @@
                                         <p class="card-text">Harga : {{ $product->harga }}</p>
                                         <p class="card-text">Berat : {{ $product->berat }}</p>
                                         <p class="card-text">Diskon : {{ $product->diskon }}</p>
-                                        <p class="card-text">Category : {{ $product->kategori_id }}</p>
+                                        <p class="card-text">Category : {{ $product->kategory->nama }}</p>
                                         <p class="card-text">Kondisi : {{ $product->kondisi }}</p>
                                         <p class="card-text">Informasi : {{ $product->informasi }}</p>
                                         <p class="card-text">Deskripsi : {!! $product->deskripsi !!}</p>

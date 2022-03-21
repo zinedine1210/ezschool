@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Midtrans\Snap;
 // use Tridi\Cekmutasi\Cekmutasi;
 use App\Models\Chat;
+use App\Models\User;
 use Midtrans\Config;
 use Illuminate\Http\Request;
 use Tridi\Cekmutasi\Cekmutasi;
@@ -27,11 +28,15 @@ class InfoController extends Controller
     }
     public function editprofile()
     {
-        return view("cooperative.edit-my-profile");
+        return view("cooperative.edit-my-profile", [
+            'users' => User::where("id", auth()->user()->id)->get()
+        ]);
     }
     public function profile()
     {
-        return view("cooperative.my-profile");
+        return view("cooperative.my-profile", [
+            'users' => User::where("id", auth()->user()->id)->get()
+        ]);
     }
     public function account()
     {

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AddressController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\InfoController;
@@ -10,6 +11,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ChangePasswordController;
 use App\Http\Controllers\ChatController;
 use App\Http\Controllers\KategoryController;
+use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,6 +45,7 @@ Route::middleware(['guest'])->group(function () {
 Route::middleware(['auth'])->group(function () {
     Route::get('/gate', [LoginController::class, 'gate']);
 
+    Route::post("/logout", [LoginController::class, "logout"]);
 
     Route::get('/cooperative', [LoginController::class, 'cooperative']);
     Route::get('/library', [LoginController::class, 'library']);
@@ -52,22 +55,33 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/product', [InfoController::class, 'index']);
     Route::get('/address', [InfoController::class, 'address']);
     Route::get('/shipment-method', [InfoController::class, 'shipment']);
-    Route::get('/edit-my-profile', [InfoController::class, 'editprofile']);
-    Route::get('/my-profile', [InfoController::class, 'profile']);
     Route::get('/account-setting', [InfoController::class, 'account']);
     Route::get('/chat', [InfoController::class, 'chat']);
     Route::get('/history', [InfoController::class, 'history']);
     Route::get('/transaksi', [InfoController::class, 'transaksi']);
-    Route::get('/my-address', [InfoController::class, 'myAddress']);
     Route::get('/edit-my-address', [InfoController::class, 'editMyAddress']);
+
+    // MY PROFILE
+    Route::get('/my-profile', [InfoController::class, 'profile']);
+    Route::get('/edit-my-profile', [InfoController::class, 'editprofile']);
+    Route::post("/edit-my-profile", [LoginController::class, "aksiEditProfile"]);
 
 
     Route::post('/pay-now', [InfoController::class, "payNow"]);
 
 
+    // ADDRESS
+    Route::resource("/my-address", AddressController::class);
+
+
+
+
+
+
+
+
     // ADMIN
     Route::get("/admin", [AdminController::class, "index"]);
-    Route::resource('/admin-chat', ChatController::class);
 
 
     Route::get("/admin-user", [AdminController::class, "user"]);
@@ -80,6 +94,8 @@ Route::middleware(['auth'])->group(function () {
 
 
 
+    Route::resource('/admin-chat', ChatController::class);
     Route::resource('/admin-products', ProductController::class);
     Route::resource('/admin-category', KategoryController::class);
+    Route::resource('/admin-order', OrderController::class);
 });

@@ -9,7 +9,7 @@
                     <div class="row">
                         <div class="col-md-4">
                             <div class="profile border-rd shadow-sm">
-                                <span><a href=""><i class="fa-solid fa-camera text-dark ms-2 mt-1"></i></a></span>
+                                {{-- <span><a href=""><i class="fa-solid fa-camera text-dark ms-2 mt-1"></i></a></span> --}}
                                 <img src="../images/foto.jpg" alt="foto anda" class="img-fluid">
                             </div>
                         </div>

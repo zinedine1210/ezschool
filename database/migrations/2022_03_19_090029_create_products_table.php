@@ -23,7 +23,7 @@ class CreateProductsTable extends Migration
             $table->integer("diskon")->nullable();
             $table->text("deskripsi");
             $table->text("informasi")->nullable();
-            $table->foreignId("kategori_id");
+            $table->foreignId("kategory_id");
             $table->timestamps();
         });
     }

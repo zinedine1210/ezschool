@@ -16,7 +16,7 @@
             href="/admin-order">List Order</a>
     </li>
     <li class="nav-item my-1">
-        <a class="nav-link hvr-underline-from-left {{ Request::is('admin-chat') ? 'aktif' : '' }}"
+        <a class="nav-link hvr-underline-from-left {{ Request::is('admin-chat*') ? 'aktif' : '' }}"
             href="/admin-chat">Chat</a>
     </li>
     <li class="nav-item my-1">

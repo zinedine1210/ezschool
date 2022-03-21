@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Mail\SendMail;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class LoginController extends Controller
 {
@@ -68,11 +70,11 @@ class LoginController extends Controller
 
         $request->session()->regenerateToken();
 
-        if (isset($_COOKIE['codeuser'])) {
-            setcookie('codeuser', '', 0, '/');
-        }
+        // if (isset($_COOKIE['codeuser'])) {
+        //     setcookie('codeuser', '', 0, '/');
+        // }
 
-        return redirect('/')->with('login', 'You are logged out!!');
+        return redirect('/')->with('login', 'You are logged out');
     }
 
     public function deleteUser($id)
@@ -91,6 +93,53 @@ class LoginController extends Controller
         return redirect()->back()->with('berhasil', 'User changed successfully');
     }
 
+    public function aksiEditProfile(Request $request)
+    {
+        $validated = $request->validate([
+            'nama' => 'min:5|max:50',
+            'tanggallahir' => 'date',
+            'phone' => 'numeric'
+        ]);
+
+
+        $tanggallahir = date('d F Y', strtotime($validated['tanggallahir']));
+
+        if ($request->hasFile('foto')) {
+            $file = $request->file('foto');
+
+            $namaasli = $file->getClientOriginalName();
+
+            $ekstensibuku = ['jpg', 'jpeg', 'png'];
+            $ekstensi = explode('.', $namaasli);
+            $ekstensi = strtolower(end($ekstensi));
+
+            if (!in_array($ekstensi, $ekstensibuku)) {
+                return redirect()->back()->with('gagal', 'Terdapat File Dengan Ekstensi yang Tidak Diperbolehkan');
+            }
+
+            User::where("id", auth()->user()->id)
+                ->update([
+                    'nama' => ucwords($request->nama),
+                    'profile' => $namaasli,
+                    'tanggallahir' => $tanggallahir,
+                    'phone' => $request->phone,
+                    'gender' => $request->gender
+                ]);
+
+            $file->move("foto-profile", $namaasli);
+        } else {
+            User::where("id", auth()->user()->id)
+                ->update([
+                    'nama' => ucwords($request->nama),
+                    'tanggallahir' => $tanggallahir,
+                    'phone' => $request->phone,
+                    'gender' => $request->gender
+                ]);
+            return redirect()->back()->with("berhasil", "Data changed successfully without ganti gambar");
+        }
+
+        return redirect()->back()->with("berhasil", "Data changed successfully");
+    }
     public function gate()
     {
         return view('gate');

@@ -1,11 +1,11 @@
 <div class="col-md-4">
     <div class="card px-4 mb-2">
         <div class="row justify-content-center align-items-center">
-            <div class="col-md-3 "><img src="images/foto.jpg" alt="foto profil" class="img-fluid mt-3 mb-3 border-rd"
-                    width="80"></div>
+            <div class="col-md-3 "><img src="foto-profile/{{ auth()->user()->profile }}" alt="foto profil"
+                    class="img-fluid mt-3 mb-3 border-rd" width="80"></div>
             <div class="col-md-9 ">
-                <h6 class="fw-bold font-poppins">Zinedine Ziddan Fahdlevy</h6>
-                <small class="font-montserrat lead">089508781380</small>
+                <h6 class="fw-bold font-poppins">{{ auth()->user()->nama }}</h6>
+                <small class="font-montserrat lead">{{ auth()->user()->phone }}</small>
             </div>
         </div>
     </div>
@@ -22,7 +22,10 @@
             </li>
             <li class="nav-item mb-3">
                 <a class="nav-link hvr-underline-from-left text-main fw-bold {{ Request::is('chat') ? 'aktif' : '' }}"
-                    href="/chat"><i class="fa-brands fa-rocketchat me-2"></i>Chat</a>
+                    href="/chat"><i class="fa-brands fa-rocketchat me-2 position-relative"><span
+                            class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
+                            <span class="visually-hidden">New alerts</span>
+                        </span></i>Chat</a>
             </li>
             <li class="nav-item mb-3">
                 <a class="nav-link hvr-underline-from-left text-main fw-bold {{ Request::is('history') ? 'aktif' : '' }}"
@@ -34,8 +37,10 @@
             </li>
             <hr class="text-muted mb-3">
             <li class="nav-item mb-3">
-                <a class="nav-link hvr-underline-from-left text-danger fw-bold " href="/logout"><i
-                        class="fa-solid fa-right-from-bracket me-2"></i>Logout</a>
+                <form action="/logout" method="POST">
+                    <button class="nav-link bg-transparent hvr-underline-from-left text-danger fw-bold "><i
+                            class="fa-solid fa-right-from-bracket me-2"></i>Logout</button>
+                </form>
             </li>
         </ul>
     </div>
