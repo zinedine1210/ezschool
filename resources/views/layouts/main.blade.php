@@ -62,6 +62,7 @@
         window.addEventListener ? window.addEventListener("load", initiateCall, !1) : window.attachEvent("load",
             initiateCall, !1);
     </script>
+    <script src="../js/store.js" async></script>
 
     <title>{{ $title }} | EzSchool</title>
 </head>
@@ -75,7 +76,7 @@
 
     <div id="alamat" class="bg-main fixed-bottom mx-auto p-3 mb-3 shadow text-white gradient">
         <h6 class="font-poppins">Ship to :
-            <a href="" class="font-poppins float-end"><small>Change</small></a>
+            <a href="/my-address" class="font-poppins float-end"><small>Change</small></a>
         </h6>
         <small class="font-montserrat deskripsiproduk">Kp. Gempol Rt 06/01 Cakung Timur, Jakarta Timur</small>
     </div>
@@ -132,7 +133,6 @@
 
 
 
-
     <!-- Javascript -->
 
     <!-- GSAP -->
@@ -152,6 +152,7 @@
         @if (session()->has('berhasil'))
             toastr.success("{{ session('berhasil') }}")
         @endif
+
 
         @if (session()->has('gagal'))
             toastr.error("{{ session('gagal') }}")

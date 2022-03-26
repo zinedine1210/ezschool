@@ -80,7 +80,15 @@ a {
     overflow: hidden !important;
     z-index: -999 !important;
 }
-
+.covergambar {
+    width: 120px !important;
+    height: 120px !important;
+    overflow: hidden;
+}
+.range {
+    width: 80px !important;
+    margin-top: -50px !important;
+}
 .info-panel {
     background-color: white !important;
     position: absolute !important;
@@ -111,6 +119,10 @@ body {
     height: 500px !important;
     position: relative !important;
     padding: 0 !important;
+}
+.infodeskripsi {
+    height: 70px !important;
+    display: inline-block !important;
 }
 
 .kartu figure {

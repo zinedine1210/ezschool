@@ -11,6 +11,10 @@
             <button class="btn bg-main text-white px-5 py-2 font-poppins">Shop Now</button>
         </div>
     </div>
+
+
+
+
     <div class="jumbotron">
         <div id="banner" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
@@ -54,6 +58,8 @@
     </div>
 
 
+
+
     <section id="panel" class="container mx-auto">
         <div class="row justify-content-center container-fluid">
             <div class="col-md-3 mb-4">
@@ -79,264 +85,74 @@
     <section id="allproducts" class="container-fluid">
         <h1 class="font-poppins fw-bold text-center mb-4">Our Products</h1>
         <div class="row justify-content-center">
-            <a class="col-3 my-3 mx-1 kartu" href="">
-                <figure class="c4-izmir gambar c4-border-cc-3 c4-image-rotate-right c4-gradient-bottom" tabindex="0"
-                    style="--primary-color: #674ea7; --secondary-color: #f3f3f3 ; --image-opacity: .1;">
-                    <img src="https://source.unsplash.com/300x300?school" class="card-img-top" alt="Sample Image">
-                    <figcaption class="c4-layout-center-left webadd">
-                        <div class="c4-reveal-up c4-delay-200">
-                            <button class="btn btn-light py-3 px-5 ms-4 font-poppins text-main">Add to
+            @foreach ($latestproducts as $product)
+                <div class="col-3 my-3 mx-1 kartu">
+                    <figure class="c4-izmir gambar c4-border-cc-3 c4-image-rotate-right c4-gradient-bottom" tabindex="0"
+                        style="--primary-color: #674ea7; --secondary-color: #f3f3f3 ; --image-opacity: .1;">
+                        @foreach ($pictures as $picture)
+                            @if ($product->id == $picture[0]->product_id)
+                                <img src="gambar-product/{{ $picture[0]->gambar }}" class="card-img-top"
+                                    alt="Sample Image">
+                            @endif
+                        @endforeach
+                        <figcaption class="c4-layout-center-left webadd">
+                            <div class="c4-reveal-up c4-delay-200">
+                                <form action="/cart" method="POST">
+                                    @csrf
+                                    <input type="hidden" name="harga" value="{{ $product->harga }}">
+                                    <input type="hidden" name="product_id" value="{{ $product->id }}">
+                                    <button type="button" data-bs-target="#addtocart{{ $product->key_product }}"
+                                        data-bs-toggle="modal"
+                                        class="btn btn-light py-3 px-5 ms-4 font-poppins text-main">Add to
+                                        Cart</button>
+                                </form>
+                            </div>
+                            <div class="row justify-content-center align-items-center ms-5 ps-3 mt-4">
+                                <div class="col-6 text-center">
+                                    <button class="bg-transparent p-0 c4-reveal-right"><i
+                                            class="fas fa-share-alt text-white"></i></button>
+                                </div>
+                                <div class="col-6 text-center">
+                                    <button class="bg-transparent p-0 c4-reveal-left"><i
+                                            class="far fa-heart text-white"></i></button>
+                                </div>
+                            </div>
+                        </figcaption>
+
+                        <figcaption class="c4-layout-center-left mobileadd text-center">
+                            <button class="btn btn-light font-poppins text-main mb-2 mt-3">Add to
                                 Cart</button>
-                        </div>
-                        <div class="row justify-content-center align-items-center ms-5 ps-3 mt-4">
-                            <div class="col-6 text-center">
-                                <button class="bg-transparent p-0 c4-reveal-right"><i
-                                        class="fas fa-share-alt text-white"></i></button>
-                            </div>
-                            <div class="col-6 text-center">
+                            <div class="d-flex justify-content-center">
                                 <button class="bg-transparent p-0 c4-reveal-left"><i
-                                        class="far fa-heart text-white"></i></button>
-                            </div>
-                        </div>
-                    </figcaption>
-
-                    <figcaption class="c4-layout-center-left mobileadd text-center">
-                        <button class="btn btn-light font-poppins text-main mb-2 mt-3">Add to
-                            Cart</button>
-                        <div class="d-flex justify-content-center">
-                            <button class="bg-transparent p-0 c4-reveal-left"><i
-                                    class="far fa-heart text-white fs-3 mx-2"></i></button>
-                            <button class="bg-transparent p-0 c4-reveal-right"><i
-                                    class="fas fa-share-alt text-white fs-3 mx-2"></i></button>
-                        </div>
-                    </figcaption>
-
-                </figure>
-                <span class="bg-main diskon font-montserrat">-30%</span>
-                <div class="card-body text-dark">
-                    <h4 class="card-text font-poppins fw-bold judul text-main">Sepatu KW Super Ges luar biasa anj</h4>
-                    <p class="text-dark font-montserrat infodeskripsi">Lorem ipsum dolor sit amet consectetur.</p>
-                    <p class="font-montserrat fw-bold"><small><i class="fas fa-star text-warning"></i> -4 | Terjual
-                            1</small></p>
-                    <h5 class="font-poppins fw-bold float-start">Rp 170.000.000</h5>
-                    <h6 class="font-poppins text-muted text-decoration-line-through float-end">Rp 100.000</h6>
-                </div>
-            </a>
-            <a class="col-3 my-3 mx-1 kartu" href="">
-                <figure class="c4-izmir gambar c4-border-cc-3 c4-image-rotate-right c4-gradient-bottom" tabindex="0"
-                    style="--primary-color: #674ea7; --secondary-color: #f3f3f3 ; --image-opacity: .1;">
-                    <img src="https://source.unsplash.com/300x300?school" class="card-img-top" alt="Sample Image">
-                    <figcaption class="c4-layout-center-left webadd">
-                        <div class="c4-reveal-up c4-delay-200">
-                            <button class="btn btn-light py-3 px-5 ms-4 font-poppins text-main">Add to
-                                Cart</button>
-                        </div>
-                        <div class="row justify-content-center align-items-center ms-5 ps-3 mt-4">
-                            <div class="col-6 text-center">
+                                        class="far fa-heart text-white fs-3 mx-2"></i></button>
                                 <button class="bg-transparent p-0 c4-reveal-right"><i
-                                        class="fas fa-share-alt text-white"></i></button>
+                                        class="fas fa-share-alt text-white fs-3 mx-2"></i></button>
                             </div>
-                            <div class="col-6 text-center">
-                                <button class="bg-transparent p-0 c4-reveal-left"><i
-                                        class="far fa-heart text-white"></i></button>
-                            </div>
-                        </div>
-                    </figcaption>
+                        </figcaption>
 
-                    <figcaption class="c4-layout-center-left mobileadd text-center">
-                        <button class="btn btn-light font-poppins text-main mb-2 mt-3">Add to
-                            Cart</button>
-                        <div class="d-flex justify-content-center">
-                            <button class="bg-transparent p-0 c4-reveal-left"><i
-                                    class="far fa-heart text-white fs-3 mx-2"></i></button>
-                            <button class="bg-transparent p-0 c4-reveal-right"><i
-                                    class="fas fa-share-alt text-white fs-3 mx-2"></i></button>
-                        </div>
-                    </figcaption>
-
-                </figure>
-                <span class="bg-main diskon font-montserrat">-30%</span>
-                <div class="card-body text-dark">
-                    <h4 class="card-text font-poppins fw-bold judul text-main">Sepatu KW Super Ges luar biasa anj</h4>
-                    <p class="text-dark font-montserrat infodeskripsi">Lorem ipsum dolor sit amet consectetur.</p>
-                    <p class="font-montserrat fw-bold"><small><i class="fas fa-star text-warning"></i> -4 | Terjual
-                            1</small></p>
-                    <h5 class="font-poppins fw-bold float-start">Rp 170.000.000</h5>
-                    <h6 class="font-poppins text-muted text-decoration-line-through float-end">Rp 100.000</h6>
+                    </figure>
+                    @if ($product->diskon !== null)
+                        <span class="bg-main diskon text-white fw-bold font-montserrat">{{ $product->diskon }} %</span>
+                    @endif
+                    <div class="card-body text-dark">
+                        <h5 class="card-text font-poppins fw-bold judul text-main"><a class="text-main"
+                                href="/product?key={{ $product->key_product }}">{{ $product->judul }}</a></h6>
+                            <small class="text-dark font-montserrat infodeskripsi">{{ $product->informasi }}</small>
+                            <p class="font-montserrat fw-bold"><small><i class="fas fa-star text-warning"></i> -4 |
+                                    Terjual
+                                    1</small></p>
+                            @if ($product->diskon !== null)
+                                <h5 class="font-poppins fw-bold float-start">Rp
+                                    {{ $product->harga - ($product->harga * $product->diskon) / 100 }}</h5>
+                                <h6 class="font-poppins text-muted text-decoration-line-through float-end">Rp
+                                    {{ $product->harga }}</h6>
+                            @else
+                                <h5 class="font-poppins fw-bold float-start">Rp
+                                    {{ $product->harga }}</h5>
+                            @endif
+                    </div>
                 </div>
-            </a>
-            <a class="col-3 my-3 mx-1 kartu" href="">
-                <figure class="c4-izmir gambar c4-border-cc-3 c4-image-rotate-right c4-gradient-bottom" tabindex="0"
-                    style="--primary-color: #674ea7; --secondary-color: #f3f3f3 ; --image-opacity: .1;">
-                    <img src="https://source.unsplash.com/300x300?school" class="card-img-top" alt="Sample Image">
-                    <figcaption class="c4-layout-center-left webadd">
-                        <div class="c4-reveal-up c4-delay-200">
-                            <button class="btn btn-light py-3 px-5 ms-4 font-poppins text-main">Add to
-                                Cart</button>
-                        </div>
-                        <div class="row justify-content-center align-items-center ms-5 ps-3 mt-4">
-                            <div class="col-6 text-center">
-                                <button class="bg-transparent p-0 c4-reveal-right"><i
-                                        class="fas fa-share-alt text-white"></i></button>
-                            </div>
-                            <div class="col-6 text-center">
-                                <button class="bg-transparent p-0 c4-reveal-left"><i
-                                        class="far fa-heart text-white"></i></button>
-                            </div>
-                        </div>
-                    </figcaption>
-
-                    <figcaption class="c4-layout-center-left mobileadd text-center">
-                        <button class="btn btn-light font-poppins text-main mb-2 mt-3">Add to
-                            Cart</button>
-                        <div class="d-flex justify-content-center">
-                            <button class="bg-transparent p-0 c4-reveal-left"><i
-                                    class="far fa-heart text-white fs-3 mx-2"></i></button>
-                            <button class="bg-transparent p-0 c4-reveal-right"><i
-                                    class="fas fa-share-alt text-white fs-3 mx-2"></i></button>
-                        </div>
-                    </figcaption>
-
-                </figure>
-                <span class="bg-main diskon font-montserrat">-30%</span>
-                <div class="card-body text-dark">
-                    <h4 class="card-text font-poppins fw-bold judul text-main">Sepatu KW Super Ges luar biasa anj</h4>
-                    <p class="text-dark font-montserrat infodeskripsi">Lorem ipsum dolor sit amet consectetur.</p>
-                    <p class="font-montserrat fw-bold"><small><i class="fas fa-star text-warning"></i> -4 | Terjual
-                            1</small></p>
-                    <h5 class="font-poppins fw-bold float-start">Rp 170.000.000</h5>
-                    <h6 class="font-poppins text-muted text-decoration-line-through float-end">Rp 100.000</h6>
-                </div>
-            </a>
-            <a class="col-3 my-3 mx-1 kartu" href="">
-                <figure class="c4-izmir gambar c4-border-cc-3 c4-image-rotate-right c4-gradient-bottom" tabindex="0"
-                    style="--primary-color: #674ea7; --secondary-color: #f3f3f3 ; --image-opacity: .1;">
-                    <img src="https://source.unsplash.com/300x300?school" class="card-img-top" alt="Sample Image">
-                    <figcaption class="c4-layout-center-left webadd">
-                        <div class="c4-reveal-up c4-delay-200">
-                            <button class="btn btn-light py-3 px-5 ms-4 font-poppins text-main">Add to
-                                Cart</button>
-                        </div>
-                        <div class="row justify-content-center align-items-center ms-5 ps-3 mt-4">
-                            <div class="col-6 text-center">
-                                <button class="bg-transparent p-0 c4-reveal-right"><i
-                                        class="fas fa-share-alt text-white"></i></button>
-                            </div>
-                            <div class="col-6 text-center">
-                                <button class="bg-transparent p-0 c4-reveal-left"><i
-                                        class="far fa-heart text-white"></i></button>
-                            </div>
-                        </div>
-                    </figcaption>
-
-                    <figcaption class="c4-layout-center-left mobileadd text-center">
-                        <button class="btn btn-light font-poppins text-main mb-2 mt-3">Add to
-                            Cart</button>
-                        <div class="d-flex justify-content-center">
-                            <button class="bg-transparent p-0 c4-reveal-left"><i
-                                    class="far fa-heart text-white fs-3 mx-2"></i></button>
-                            <button class="bg-transparent p-0 c4-reveal-right"><i
-                                    class="fas fa-share-alt text-white fs-3 mx-2"></i></button>
-                        </div>
-                    </figcaption>
-
-                </figure>
-                <span class="bg-main diskon font-montserrat">-30%</span>
-                <div class="card-body text-dark">
-                    <h4 class="card-text font-poppins fw-bold judul text-main">Sepatu KW Super Ges luar biasa anj</h4>
-                    <p class="text-dark font-montserrat infodeskripsi">Lorem ipsum dolor sit amet consectetur.</p>
-                    <p class="font-montserrat fw-bold"><small><i class="fas fa-star text-warning"></i> -4 | Terjual
-                            1</small></p>
-                    <h5 class="font-poppins fw-bold float-start">Rp 170.000.000</h5>
-                    <h6 class="font-poppins text-muted text-decoration-line-through float-end">Rp 100.000</h6>
-                </div>
-            </a>
-            <a class="col-3 my-3 mx-1 kartu" href="">
-                <figure class="c4-izmir gambar c4-border-cc-3 c4-image-rotate-right c4-gradient-bottom" tabindex="0"
-                    style="--primary-color: #674ea7; --secondary-color: #f3f3f3 ; --image-opacity: .1;">
-                    <img src="https://source.unsplash.com/300x300?school" class="card-img-top" alt="Sample Image">
-                    <figcaption class="c4-layout-center-left webadd">
-                        <div class="c4-reveal-up c4-delay-200">
-                            <button class="btn btn-light py-3 px-5 ms-4 font-poppins text-main">Add to
-                                Cart</button>
-                        </div>
-                        <div class="row justify-content-center align-items-center ms-5 ps-3 mt-4">
-                            <div class="col-6 text-center">
-                                <button class="bg-transparent p-0 c4-reveal-right"><i
-                                        class="fas fa-share-alt text-white"></i></button>
-                            </div>
-                            <div class="col-6 text-center">
-                                <button class="bg-transparent p-0 c4-reveal-left"><i
-                                        class="far fa-heart text-white"></i></button>
-                            </div>
-                        </div>
-                    </figcaption>
-
-                    <figcaption class="c4-layout-center-left mobileadd text-center">
-                        <button class="btn btn-light font-poppins text-main mb-2 mt-3">Add to
-                            Cart</button>
-                        <div class="d-flex justify-content-center">
-                            <button class="bg-transparent p-0 c4-reveal-left"><i
-                                    class="far fa-heart text-white fs-3 mx-2"></i></button>
-                            <button class="bg-transparent p-0 c4-reveal-right"><i
-                                    class="fas fa-share-alt text-white fs-3 mx-2"></i></button>
-                        </div>
-                    </figcaption>
-
-                </figure>
-                <span class="bg-main diskon font-montserrat">-30%</span>
-                <div class="card-body text-dark">
-                    <h4 class="card-text font-poppins fw-bold judul text-main">Sepatu KW Super Ges luar biasa anj</h4>
-                    <p class="text-dark font-montserrat infodeskripsi">Lorem ipsum dolor sit amet consectetur.</p>
-                    <p class="font-montserrat fw-bold"><small><i class="fas fa-star text-warning"></i> -4 | Terjual
-                            1</small></p>
-                    <h5 class="font-poppins fw-bold float-start">Rp 170.000.000</h5>
-                    <h6 class="font-poppins text-muted text-decoration-line-through float-end">Rp 100.000</h6>
-                </div>
-            </a>
-            <a class="col-3 my-3 mx-1 kartu" href="">
-                <figure class="c4-izmir gambar c4-border-cc-3 c4-image-rotate-right c4-gradient-bottom" tabindex="0"
-                    style="--primary-color: #674ea7; --secondary-color: #f3f3f3 ; --image-opacity: .1;">
-                    <img src="https://source.unsplash.com/300x300?school" class="card-img-top" alt="Sample Image">
-                    <figcaption class="c4-layout-center-left webadd">
-                        <div class="c4-reveal-up c4-delay-200">
-                            <button class="btn btn-light py-3 px-5 ms-4 font-poppins text-main">Add to
-                                Cart</button>
-                        </div>
-                        <div class="row justify-content-center align-items-center ms-5 ps-3 mt-4">
-                            <div class="col-6 text-center">
-                                <button class="bg-transparent p-0 c4-reveal-right"><i
-                                        class="fas fa-share-alt text-white"></i></button>
-                            </div>
-                            <div class="col-6 text-center">
-                                <button class="bg-transparent p-0 c4-reveal-left"><i
-                                        class="far fa-heart text-white"></i></button>
-                            </div>
-                        </div>
-                    </figcaption>
-
-                    <figcaption class="c4-layout-center-left mobileadd text-center">
-                        <button class="btn btn-light font-poppins text-main mb-2 mt-3">Add to
-                            Cart</button>
-                        <div class="d-flex justify-content-center">
-                            <button class="bg-transparent p-0 c4-reveal-left"><i
-                                    class="far fa-heart text-white fs-3 mx-2"></i></button>
-                            <button class="bg-transparent p-0 c4-reveal-right"><i
-                                    class="fas fa-share-alt text-white fs-3 mx-2"></i></button>
-                        </div>
-                    </figcaption>
-
-                </figure>
-                <span class="bg-main diskon font-montserrat">-30%</span>
-                <div class="card-body text-dark">
-                    <h4 class="card-text font-poppins fw-bold judul text-main">Sepatu KW Super Ges luar biasa anj</h4>
-                    <p class="text-dark font-montserrat infodeskripsi">Lorem ipsum dolor sit amet consectetur.</p>
-                    <p class="font-montserrat fw-bold"><small><i class="fas fa-star text-warning"></i> -4 | Terjual
-                            1</small></p>
-                    <h5 class="font-poppins fw-bold float-start">Rp 170.000.000</h5>
-                    <h6 class="font-poppins text-muted text-decoration-line-through float-end">Rp 100.000</h6>
-                </div>
-            </a>
+            @endforeach
         </div>
 
         <button class="learn-more mt-4 mx-auto justify-content-center d-block">
@@ -354,49 +170,70 @@
         <h1 class="font-poppins fw-bold text-center">Popular</h1>
         <p class="font-montserrat text-muted text-center mb-4">Our top selling product that you may like</p>
         <div class="row justify-content-center">
-            <a class="col-3 my-3 mx-1 kartu" href="">
-                <figure class="c4-izmir gambar c4-border-cc-3 c4-image-rotate-right c4-gradient-bottom" tabindex="0"
-                    style="--primary-color: #674ea7; --secondary-color: #f3f3f3 ; --image-opacity: .1;">
-                    <img src="https://source.unsplash.com/300x300?school" class="card-img-top" alt="Sample Image">
-                    <figcaption class="c4-layout-center-left webadd">
-                        <div class="c4-reveal-up c4-delay-200">
-                            <button class="btn btn-light py-3 px-5 ms-4 font-poppins text-main">Add to
+            @foreach ($popularproducts as $product)
+                <div class="col-3 my-3 mx-1 kartu" href="/product?key={{ $product->key_product }}">
+                    <figure class="c4-izmir gambar c4-border-cc-3 c4-image-rotate-right c4-gradient-bottom" tabindex="0"
+                        style="--primary-color: #674ea7; --secondary-color: #f3f3f3 ; --image-opacity: .1;">
+                        @foreach ($pictures as $picture)
+                            @if ($product->id == $picture[0]->product_id)
+                                <img src="gambar-product/{{ $picture[0]->gambar }}" class="card-img-top"
+                                    alt="Sample Image">
+                            @endif
+                        @endforeach
+                        <figcaption class="c4-layout-center-left webadd">
+                            <div class="c4-reveal-up c4-delay-200">
+                                <button type="button" data-bs-target="#addtocart{{ $product->key_product }}"
+                                    data-bs-toggle="modal" class="btn btn-light py-3 px-5 ms-4 font-poppins text-main">Add
+                                    to
+                                    Cart</button>
+                            </div>
+                            <div class="row justify-content-center align-items-center ms-5 ps-3 mt-4">
+                                <div class="col-6 text-center">
+                                    <button class="bg-transparent p-0 c4-reveal-right"><i
+                                            class="fas fa-share-alt text-white"></i></button>
+                                </div>
+                                <div class="col-6 text-center">
+                                    <button class="bg-transparent p-0 c4-reveal-left"><i
+                                            class="far fa-heart text-white"></i></button>
+                                </div>
+                            </div>
+                        </figcaption>
+
+                        <figcaption class="c4-layout-center-left mobileadd text-center">
+                            <button class="btn btn-light font-poppins text-main mb-2 mt-3">Add to
                                 Cart</button>
-                        </div>
-                        <div class="row justify-content-center align-items-center ms-5 ps-3 mt-4">
-                            <div class="col-6 text-center">
-                                <button class="bg-transparent p-0 c4-reveal-right"><i
-                                        class="fas fa-share-alt text-white"></i></button>
-                            </div>
-                            <div class="col-6 text-center">
+                            <div class="d-flex justify-content-center">
                                 <button class="bg-transparent p-0 c4-reveal-left"><i
-                                        class="far fa-heart text-white"></i></button>
+                                        class="far fa-heart text-white fs-3 mx-2"></i></button>
+                                <button class="bg-transparent p-0 c4-reveal-right"><i
+                                        class="fas fa-share-alt text-white fs-3 mx-2"></i></button>
                             </div>
-                        </div>
-                    </figcaption>
+                        </figcaption>
 
-                    <figcaption class="c4-layout-center-left mobileadd text-center">
-                        <button class="btn btn-light font-poppins text-main mb-2 mt-3">Add to
-                            Cart</button>
-                        <div class="d-flex justify-content-center">
-                            <button class="bg-transparent p-0 c4-reveal-left"><i
-                                    class="far fa-heart text-white fs-3 mx-2"></i></button>
-                            <button class="bg-transparent p-0 c4-reveal-right"><i
-                                    class="fas fa-share-alt text-white fs-3 mx-2"></i></button>
-                        </div>
-                    </figcaption>
-
-                </figure>
-                <span class="bg-main diskon font-montserrat">-30%</span>
-                <div class="card-body text-dark">
-                    <h4 class="card-text font-poppins fw-bold judul text-main">Sepatu KW Super Ges luar biasa anj</h4>
-                    <p class="text-dark font-montserrat infodeskripsi">Lorem ipsum dolor sit amet consectetur.</p>
-                    <p class="font-montserrat fw-bold"><small><i class="fas fa-star text-warning"></i> -4 | Terjual
-                            1</small></p>
-                    <h5 class="font-poppins fw-bold float-start">Rp 170.000.000</h5>
-                    <h6 class="font-poppins text-muted text-decoration-line-through float-end">Rp 100.000</h6>
+                    </figure>
+                    @if ($product->diskon !== null)
+                        <span class="bg-main diskon text-white fw-bold font-montserrat">{{ $product->diskon }} %</span>
+                    @endif
+                    <div class="card-body text-dark">
+                        <h5 class="card-text font-poppins fw-bold judul text-main"><a class="text-main"
+                                href="/product/{{ $product->key_product }}">{{ $product->judul }}</a></h6>
+                            <small class="text-dark font-montserrat infodeskripsi">{{ $product->informasi }}</small>
+                            <p class="font-montserrat fw-bold"><small><i class="fas fa-star text-warning"></i> -4 |
+                                    Terjual
+                                    1</small></p>
+                            @if ($product->diskon !== null)
+                                <h5 class="font-poppins fw-bold float-start">Rp
+                                    {{ $product->harga - ($product->harga * $product->diskon) / 100 }}</h5>
+                                <h6 class="font-poppins text-muted text-decoration-line-through float-end">Rp
+                                    {{ $product->harga }}</h6>
+                            @else
+                                <h5 class="font-poppins fw-bold float-start">Rp
+                                    {{ $product->harga }}</h5>
+                            @endif
+                    </div>
                 </div>
-            </a>
+            @endforeach
+
         </div>
 
         <button class="learn-more mt-4 mx-auto justify-content-center d-block">
@@ -406,4 +243,6 @@
             <span class="button-text">Show More</span>
         </button>
     </section>
+
+    @include('partials.modaladdtocart');
 @endsection

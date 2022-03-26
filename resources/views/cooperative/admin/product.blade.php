@@ -40,7 +40,7 @@
                             <td>{{ $product->kondisi }}</td>
                             <td>{{ $product->berat }}</td>
                             <td>{{ $product->diskon }}</td>
-                            <td>{{ $product->kategori_id }}</td>
+                            <td>{{ $product->kategory_id }}</td>
                             <td>
                                 <form action="/admin-products/{{ $product->id }}" method="POST">
                                     @csrf
@@ -111,6 +111,12 @@
                             <input type="number" class="form-control" id="diskon" name="diskon"
                                 placeholder="name@example.com">
                             <label for="diskon">Diskon</label>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input type="number" class="form-control" id="stock" name="stock"
+                                placeholder="name@example.com">
+                            <label for="stock">Stock</label>
                         </div>
 
                         <div class="form-floating mb-3">
@@ -269,6 +275,8 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <a href="/admin-products/{{ $product->id }}" class="btn btn-primary text-white fw-bold">See
+                            Detail</a>
                     </div>
                 </div>
             </div>

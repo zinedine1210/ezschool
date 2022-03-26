@@ -6,6 +6,11 @@ use App\Models\User;
 use App\Mail\SendMail;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\DetailProduct;
+use App\Models\GambarProduct;
+use App\Models\Kategory;
+use App\Models\OrderList;
+use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
@@ -146,7 +151,17 @@ class LoginController extends Controller
     }
     public function cooperative()
     {
-        return view('cooperative.index');
+        $data = GambarProduct::all()->groupBy("product_id");
+
+        return view('cooperative.index', [
+            'cart' => OrderList::where("user_id", auth()->user()->id)->where("status", "cart")->get(),
+            'details' => DetailProduct::all(),
+            'categories' => Kategory::all(),
+            'products' => Product::all(),
+            'latestproducts' => Product::paginate(10),
+            'popularproducts' => Product::paginate(10),
+            'pictures' => $data->all()
+        ]);
     }
     public function library()
     {

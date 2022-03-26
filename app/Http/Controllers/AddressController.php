@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\Address;
+use App\Models\Kategory;
+use App\Models\OrderList;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 
 class AddressController extends Controller
@@ -17,6 +19,8 @@ class AddressController extends Controller
     public function index()
     {
         return view("cooperative.my-address", [
+            'cart' => OrderList::where("user_id", auth()->user()->id)->where("status", "cart")->get(),
+            'categories' => Kategory::all(),
             'addresses' => Address::where("user_id", auth()->user()->id)->get()
         ]);
     }

@@ -24,7 +24,13 @@
                             <th>{{ $user->key_user }}</th>
                             <td>{{ $user->username }}</td>
                             <td>{{ $user->email }}</td>
-                            <td>{{ $user->isAdmin }}</td>
+                            <td>
+                                @if ($user->isAdmin)
+                                    <small class="bg-main border-rd text-white fw-bold px-2 py-1">Admin</small>
+                                @else
+                                    <small class="bg-info border-rd text-white fw-bold px-2 py-1">Not Admin</small>
+                                @endif
+                            </td>
                             <td>
                                 <form action="/user-delete/{{ $user->id }}">
                                     @csrf

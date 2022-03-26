@@ -13,6 +13,8 @@
                     <tr>
                         <th scope="col">No</th>
                         <th scope="col">Banner</th>
+                        <th scope="col">Judul</th>
+                        <th scope="col">Informasi</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
@@ -53,9 +55,19 @@
                             <label for="banner" class="form-label">Picture</label>
                             <input class="form-control" type="file" id="banner" name="banner">
                         </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="judul" name="judul"
+                                placeholder="name@example.com">
+                            <label for="judul">Judul</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="informasi" name="informasi"
+                                placeholder="name@example.com">
+                            <label for="informasi">Informasi</label>
+                        </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">Add Product</button>
+                    <button type="submit" class="btn btn-primary">Add Banner</button>
                     </form>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>

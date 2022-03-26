@@ -5,15 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Order extends Model
+class PreCheckout extends Model
 {
     use HasFactory;
 
-
     protected $guarded = ['id'];
-
-    public function orderlist()
-    {
-        return $this->hasMany(OrderList::class);
-    }
 }

@@ -15,6 +15,14 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
+            $table->string("key_order")->unique();
+            $table->string("nama");
+            $table->bigInteger("phone");
+            $table->bigInteger("shippingprice");
+            $table->enum("paymentmethod", ['cardpayment', 'takeatplace']);
+            $table->bigInteger("total");
+            $table->string("time")->default(date("d M Y"));
+            $table->foreignId("address_id");
             $table->timestamps();
         });
     }

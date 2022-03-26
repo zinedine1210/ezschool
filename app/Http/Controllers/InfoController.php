@@ -7,21 +7,15 @@ use Midtrans\Snap;
 use App\Models\Chat;
 use App\Models\User;
 use Midtrans\Config;
+use App\Models\Kategory;
+use App\Models\OrderList;
 use Illuminate\Http\Request;
 use Tridi\Cekmutasi\Cekmutasi;
 use App\Http\Controllers\Controller;
 
 class InfoController extends Controller
 {
-    public function index()
-    {
-        return view('cooperative.info-product');
-    }
 
-    public function address()
-    {
-        return view("cooperative.address");
-    }
     public function shipment()
     {
         return view("cooperative.shipment");
@@ -29,28 +23,38 @@ class InfoController extends Controller
     public function editprofile()
     {
         return view("cooperative.edit-my-profile", [
+            // 'cart' => OrderList::where("user_id", auth()->user()->id)->count(),
+            'cart' => OrderList::where("user_id", auth()->user()->id)->where("status", "cart")->get(),
+            'categories' => Kategory::all(),
             'users' => User::where("id", auth()->user()->id)->get()
         ]);
     }
     public function profile()
     {
         return view("cooperative.my-profile", [
+            // 'cart' => OrderList::where("user_id", auth()->user()->id)->count(),
+            'cart' => OrderList::where("user_id", auth()->user()->id)->where("status", "cart")->get(),
+            'categories' => Kategory::all(),
             'users' => User::where("id", auth()->user()->id)->get()
         ]);
-    }
-    public function account()
-    {
-        return view("cooperative.account-setting");
     }
     public function chat()
     {
         return view("cooperative.chat", [
+            // 'cart' => OrderList::where("user_id", auth()->user()->id)->count(),
+            'cart' => OrderList::where("user_id", auth()->user()->id)->where("status", "cart")->get(),
+
+            'categories' => Kategory::all(),
             'chats' => Chat::where("user_id", auth()->user()->id)->get()
         ]);
     }
     public function history()
     {
-        return view("cooperative.history");
+        return view("cooperative.history", [
+            // 'cart' => OrderList::where("user_id", auth()->user()->id)->count(),
+            'cart' => OrderList::where("user_id", auth()->user()->id)->where("status", "cart")->get(),
+            'categories' => Kategory::all()
+        ]);
     }
 
     public function payNow(Request $request)
@@ -95,7 +99,7 @@ class InfoController extends Controller
 
         $snapToken = \Midtrans\Snap::getSnapToken($params);
 
-        return view("transaksi", [
+        return view("cooperative.transaksi", [
             'snaptoken' => $snapToken
         ]);
     }

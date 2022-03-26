@@ -80,7 +80,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
     {{-- Script Lokal --}}
-    <script src="../js/script.js"></script>
+    <script src="../js/script.js" type="text/javascript"></script>
 
     <!-- Akhir Javascript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"

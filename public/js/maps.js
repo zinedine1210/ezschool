@@ -1,12 +1,13 @@
 $(document).ready(function() {
-    const uluru = {
+
+    const jakarta = {
         lat: -6.200000,
         lng: 106.816666
     };
 
     const map = new google.maps.Map(document.getElementById("map"), {
         zoom: 12,
-        center: uluru,
+        center: jakarta,
         mapTypeId: "roadmap"
     })
 
@@ -32,9 +33,6 @@ $(document).ready(function() {
     asal.focus();
     // When the user selects an address from the drop-down, populate the
     // address fields in the form.
-
-
-
 
     $("#formRute").submit(function(e) {
 

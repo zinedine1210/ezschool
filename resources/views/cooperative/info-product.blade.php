@@ -5,44 +5,32 @@
     <section id="info" class="container-fluid">
         <div class="row justify-content-center mb-3">
             <div class="col-md-4 text-center">
-                <div id="carouselExampleCaptions" class="carousel slide carousel-dark" data-bs-ride="carousel">
+                <div id="{{ $product->key_product }}" class="carousel slide carousel-dark" data-bs-ride="carousel">
                     <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
+                        <button type="button" data-bs-target="#{{ $product->key_product }}" data-bs-slide-to="0"
                             class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                        <button type="button" data-bs-target="#{{ $product->key_product }}" data-bs-slide-to="1"
                             aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                        <button type="button" data-bs-target="#{{ $product->key_product }}" data-bs-slide-to="2"
                             aria-label="Slide 3"></button>
                     </div>
                     <div class="carousel-inner">
-                        <div class="carousel-item slider text-center active">
-                            <img src="images/sepatu.jpg" class="d-block" alt="nama produk">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>First slide label</h5>
-                                <p>Some representative placeholder content for the first slide.</p>
+                        @foreach ($pictures as $data)
+                            <div class="carousel-item slider text-center @if ($data->id == $gambarpertama->id) active @endif ">
+                                <img src="gambar-product/{{ $data->gambar }}" class="d-block" alt="nama produk">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Gambar {{ $loop->iteration }}</h5>
+                                </div>
                             </div>
-                        </div>
-                        <div class="carousel-item slider text-center">
-                            <img src="images/sepatu2.jpg" class="d-block" alt="nama produk">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>Second slide label</h5>
-                                <p>Some representative placeholder content for the second slide.</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item slider text-center">
-                            <img src="images/tas.jpg" class="d-block" alt="nama produk">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>Third slide label</h5>
-                                <p>Some representative placeholder content for the third slide.</p>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-                        data-bs-slide="prev">
+                    <button class="
+                                carousel-control-prev" type="button"
+                        data-bs-target="#{{ $product->key_product }}" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>
                     </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                    <button class="carousel-control-next" type="button" data-bs-target="#{{ $product->key_product }}"
                         data-bs-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Next</span>
@@ -51,27 +39,38 @@
 
 
                 {{-- penawaran spesial --}}
-                <div class="text-center mt-3" id="gratisongkir">
+                {{-- <div class="text-center mt-3" id="gratisongkir">
                     <img src="images/icon/free-delivery.png" alt="high quality" width="40" class="img-fluid me-1"><span
                         class="text-dark font-poppins">Free
                         Shipping</span>
-                </div>
+                </div> --}}
 
                 {{-- akhir penawaran spesial --}}
             </div>
             <div class="col-md-7">
-                <h3 class="font-poppins">Hanes Men's EcoSmart Sweatshirt</h3>
-                <h4 class="text-main fw-bold font-poppins">Rp 50.000</h4>
-                <p class="fw-bold font-poppins"><i class="fas fa-regular fa-star me-2 text-warning"></i>5.4 Ratings ( 1
-                    Ulasan
-                    )
+                <h3 class="font-poppins">{{ $product->judul }}</h3>
+                @if ($product->diskon)
+                    <h4 class="text-muted d-inline float-end fw-bold font-poppins text-decoration-line-through">Rp
+                        {{ $product->harga }}</h4>
+                    <h4 class="text-main fw-bold font-poppins">Rp
+                        {{ $product->harga - ($product->harga * $product->diskon) / 100 }}</h4>
+                @else
+                    <h4 class="text-main fw-bold font-poppins">Rp {{ $product->harga }}</h4>
+                @endif
+                <p class="fw-bold font-poppins"><i class="fas fa-regular fa-star me-2 text-warning"></i>5.4 Ratings
+                    ( 1 Ulasan)
                 </p>
                 <hr>
                 <div class="detail">
-                    <h6 class="font-poppins text-main">Kondisi : <span class="text-dark">Baru</span></h6>
-                    <h6 class="font-poppins text-main">Berat : <span class="text-dark">560 Gram</span></h6>
-                    <h6 class="font-poppins text-main">Kategori : <span class="text-dark">Sepatu</span></h6>
-                    <ul class="list-group rounded font-poppins text-main">
+                    <h6 class="font-poppins text-main">Kondisi : <span
+                            class="text-dark">{{ Str::ucfirst($product->kondisi) }}</span></h6>
+                    <h6 class="font-poppins text-main">Berat : <span class="text-dark">{{ $product->berat }}
+                            Gram</span></h6>
+                    <h6 class="font-poppins text-main">Kategori : <span
+                            class="text-dark">{{ $product->kategory->nama }}</span></h6>
+
+
+                    {{-- <ul class="list-group rounded font-poppins text-main">
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             XL
                             <span class="badge bg-main rounded-pill">14</span>
@@ -84,19 +83,18 @@
                             M
                             <span class="badge bg-main rounded-pill">1</span>
                         </li>
-                    </ul>
-                    <ul class="font-montserrat mt-5">
-                        <li>50% Cotton, 50% Polyester</li>
-                        <li>Imported</li>
-                        <li>Machine Wash</li>
-                        <li>Lorem ipsum dolor sit amet.</li>
-                        <li>Lorem, ipsum dolor.</li>
-                        <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae, perspiciatis.</li>
-                    </ul>
+                    </ul> --}}
+
+
+                    <p class="font-montserrat">
+                        {!! $product->deskripsi !!}
+                    </p>
                     <h6 class="font-poppins text-main fw-bold">Info Penting</h6>
-                    <p class="font-montserrat">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem molestias
-                        debitis suscipit accusamus ipsa, odio eos aspernatur repellendus et, distinctio repudiandae officiis
-                        expedita enim dolor ratione officia sunt sint eum!</p>
+                    <small class="font-montserrat">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
+                        molestias
+                        debitis suscipit accusamus ipsa, odio eos aspernatur repellendus et, distinctio repudiandae
+                        officiis
+                        expedita enim dolor ratione officia sunt sint eum!</small>
                 </div>
 
                 <form action="" method="POST" class="text-white font-poppins fw-bold mt-4 text-center">
@@ -139,10 +137,12 @@
                 <div class="komentarpribadi">
 
                     <div class="komentar rounded mx-auto font-montserrat p-2 mt-2">
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia dolore maiores nostrum, officiis
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia dolore maiores nostrum,
+                            officiis
                             amet non culpa aperiam minima dicta vero.</p>
 
-                        <p class="card bg-main2 rounded p-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                        <p class="card bg-main2 rounded p-2">Lorem, ipsum dolor sit amet consectetur adipisicing
+                            elit.
                             Laboriosam, blanditiis?</p>
                     </div>
 
@@ -168,13 +168,16 @@
                         </div>
 
                         <div class="col-md-8">
-                            <small class="font-montserrat text-muted">Lorem, ipsum dolor sit amet consectetur adipisicing
+                            <small class="font-montserrat text-muted">Lorem, ipsum dolor sit amet consectetur
+                                adipisicing
                                 elit.</small>
 
 
                             <small class="font-montserrat card rounded p-3 bg-main2 mt-2">
                                 <h6 class="text-main font-poppins">EzSchool Team</h6>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem commodi magnam iusto
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem commodi
+                                magnam
+                                iusto
                                 cumque voluptatibus dignissimos error nihil omnis fugit fugiat?
                             </small>
                         </div>
@@ -193,11 +196,16 @@
                         </div>
 
                         <div class="col-md-8">
-                            <small class="font-montserrat text-muted">Lorem, ipsum dolor sit amet consectetur adipisicing
+                            <small class="font-montserrat text-muted">Lorem, ipsum dolor sit amet consectetur
+                                adipisicing
                                 elit.
-                                Esse obcaecati ipsum modi nostrum quo quasi minima commodi iusto nihil ratione quisquam
-                                consectetur, quidem, est architecto enim. Sapiente nulla nesciunt iusto eaque, pariatur quos
-                                aperiam a et fugit nostrum possimus incidunt molestias error tempore labore suscipit ex?
+                                Esse obcaecati ipsum modi nostrum quo quasi minima commodi iusto nihil ratione
+                                quisquam
+                                consectetur, quidem, est architecto enim. Sapiente nulla nesciunt iusto eaque,
+                                pariatur
+                                quos
+                                aperiam a et fugit nostrum possimus incidunt molestias error tempore labore suscipit
+                                ex?
                                 Vero sapiente quae maiores.</small>
                         </div>
                         <div class="col-md-1">

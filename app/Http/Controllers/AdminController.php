@@ -6,6 +6,8 @@ use App\Models\User;
 use App\Models\Banner;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\DetailProduct;
+use App\Models\Product;
 
 class AdminController extends Controller
 {
@@ -51,11 +53,36 @@ class AdminController extends Controller
         }
 
         Banner::create([
-            'banner' => $namaasli
+            'banner' => $namaasli,
+            'judul' => $request->judul,
+            'informasi' => $request->informasi
         ]);
 
         $file->move("images/banner", $namaasli);
 
         return redirect()->back()->with("berhasil", "Banner successfully added");
+    }
+
+    public function addDetail(Request $request)
+    {
+        if ($request->harga == null) {
+            $data = Product::where("id", $request->product)->first();
+            $data = $data->harga;
+        } else {
+            $data = $request->harga;
+        }
+        DetailProduct::create([
+            'nama' => $request->nama,
+            'stock' => $request->stock,
+            'harga' => $data,
+            'product_id' => $request->product
+        ]);
+
+        return redirect()->back()->with("berhasil", "Details added successfully");
+    }
+    public function deleteDetail($id)
+    {
+        DetailProduct::destroy($id);
+        return redirect()->back()->with("berhasil", "Details removed successfully");
     }
 }

@@ -7,6 +7,7 @@ use App\Models\Kategory;
 use Illuminate\Http\Request;
 use App\Models\GambarProduct;
 use App\Http\Controllers\Controller;
+use App\Models\DetailProduct;
 use Illuminate\Support\Facades\File;
 
 class ProductController extends Controller
@@ -19,7 +20,7 @@ class ProductController extends Controller
     public function index()
     {
         return view("cooperative.admin.product", [
-            'products' => Product::all(),
+            'products' => Product::latest()->paginate(10),
             'pictures' => GambarProduct::all(),
             'categories' => Kategory::all()
         ]);
@@ -43,6 +44,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+
         $input = '01234567890123456789';
 
         function generate_random_kode($input)
@@ -58,6 +60,7 @@ class ProductController extends Controller
 
         $koderandom = generate_random_kode($input);
 
+
         $id = Product::create([
             'judul' => ucwords($request->judul),
             'key_product' => "BRG" . $koderandom,
@@ -65,9 +68,10 @@ class ProductController extends Controller
             'berat' => $request->berat,
             'kondisi' => $request->kondisi,
             'diskon' => $request->diskon,
+            'stock' => $request->stock,
             'informasi' => $request->informasi,
             'deskripsi' => $request->deskripsi,
-            'kategori_id' => $request->kategori
+            'kategory_id' => $request->kategori
         ]);
 
 
@@ -106,7 +110,10 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+        return view("cooperative.admin.detailproduct", [
+            'products' => Product::where("id", $id)->get(),
+            'details' => DetailProduct::where("product_id",  $id)->get()
+        ]);
     }
 
     /**
@@ -138,7 +145,7 @@ class ProductController extends Controller
                 'diskon' => $request->diskon,
                 'informasi' => $request->informasi,
                 'deskripsi' => $request->editdeskripsi,
-                'kategori_id' => $request->kategori
+                'kategory_id' => $request->kategori
             ]);
 
         if ($request->hasFile('editgambar')) {

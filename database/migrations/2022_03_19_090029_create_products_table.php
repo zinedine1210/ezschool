@@ -21,6 +21,7 @@ class CreateProductsTable extends Migration
             $table->enum("kondisi", ["baru", "bekas"]);
             $table->integer("berat")->nullable();
             $table->integer("diskon")->nullable();
+            $table->integer("stock");
             $table->text("deskripsi");
             $table->text("informasi")->nullable();
             $table->foreignId("kategory_id");

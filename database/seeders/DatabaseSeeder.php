@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\GambarProduct;
 use App\Models\Kategory;
 use App\Models\Product;
 use App\Models\User;
@@ -48,16 +49,21 @@ class DatabaseSeeder extends Seeder
         }
 
 
-        Product::create([
-            'judul' => "Tas Keren",
-            'key_product' => "BRG" . 128982389,
-            'harga' => 90000,
-            'kondisi' => 'baru',
-            'berat' => 9,
-            'diskon' => 0,
-            'deskripsi' => "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed illum deleniti minus exercitationem dolorum tempora, officiis molestiae. Quis, adipisci dolores.",
-            'informasi' => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, pariatur?",
-            'kategory_id' => 2
-        ]);
+        // Product::create([
+        //     'judul' => "Tas Keren",
+        //     'key_product' => "BRG" . 128982389,
+        //     'harga' => 90000,
+        //     'kondisi' => 'baru',
+        //     'berat' => 9,
+        //     'stock' => 3,
+        //     'deskripsi' => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus necessitatibus perferendis numquam facilis natus dolorum asperiores explicabo a exercitationem vel ratione commodi harum, ullam aut distinctio fugiat autem impedit ducimus.",
+        //     'informasi' => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, pariatur?",
+        //     'kategory_id' => 2
+        // ]);
+
+        // GambarProduct::create([
+        //     'product_id' => 1,
+        //     'gambar' => "sepatu2.jpg"
+        // ]);
     }
 }

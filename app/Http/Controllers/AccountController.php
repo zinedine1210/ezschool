@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Chat;
+use App\Models\User;
+use App\Models\Kategory;
+use App\Models\OrderList;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class ChatController extends Controller
+class AccountController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,13 +17,11 @@ class ChatController extends Controller
      */
     public function index()
     {
-        $collection = collect(Chat::with("user")->latest()->get());
-
-        $data = $collection->groupBy("user_id")->all();
-
-        return view("cooperative.admin.chat", [
+        return view("cooperative.account-setting", [
             // 'cart' => OrderList::where("user_id", auth()->user()->id)->count(),
-            'chats' => $data
+            'cart' => OrderList::where("user_id", auth()->user()->id)->where("status", "cart")->get(),
+            'categories' => Kategory::all()
+
         ]);
     }
 
@@ -43,29 +43,7 @@ class ChatController extends Controller
      */
     public function store(Request $request)
     {
-        $input = '01234567890123456789';
-
-        function generate_random_kode($input)
-        {
-            $input_length = strlen($input);
-            $random_string = '';
-            for ($i = 0; $i < 10; $i++) {
-                $random_character = $input[mt_rand(0, $input_length - 1)];
-                $random_string .= $random_character;
-            }
-            return $random_string;
-        }
-
-        $koderandom = generate_random_kode($input);
-
-        Chat::create([
-            'chat' => $request->chat,
-            'key_chat' => "CHT" . $koderandom,
-            'role' => $request->role,
-            'user_id' => $request->user
-        ]);
-
-        return redirect()->back();
+        //
     }
 
     /**
@@ -76,15 +54,7 @@ class ChatController extends Controller
      */
     public function show($id)
     {
-        $collection = collect(Chat::with("user")->latest()->get());
-
-        $data = $collection->groupBy("user_id")->all();
-
-        return view("cooperative.admin.admin-chat", [
-            'chatdetail' => $collection->where("user_id", $id)->groupBy("user_id")->all(),
-            'chats' => Chat::where("user_id", $id)->get(),
-            "listchats" => $data
-        ]);
+        //
     }
 
     /**
@@ -107,7 +77,28 @@ class ChatController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validated = $request->validate([
+            'username' => 'min:5|max:50',
+            'email' => 'email:dns|max:50|min:10',
+            'oldpassword' => 'required|min:5|max:50',
+            'newpassword' => 'required|min:5|max:50',
+            'confirmpassword' => 'required|min:5|max:50|same:newpassword'
+        ]);
+
+        $oldpassword = User::where("id", $id)->first();
+
+        if (!password_verify($validated['oldpassword'], $oldpassword->password)) {
+            return redirect()->back()->with("gagal", "Password not found in our records");
+        }
+
+        User::where("id", $id)
+            ->update([
+                'username' => $validated['username'],
+                'email' => $validated['email'],
+                'password' => bcrypt($validated['newpassword'])
+            ]);
+
+        return redirect()->back()->with("berhasil", "Account edited successfully");
     }
 
     /**
@@ -118,7 +109,6 @@ class ChatController extends Controller
      */
     public function destroy($id)
     {
-        Chat::where("user_id", $id)->delete();
-        return redirect()->back()->with("berhasil", "Chat deleted successfully");
+        //
     }
 }

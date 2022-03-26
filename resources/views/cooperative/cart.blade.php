@@ -6,7 +6,8 @@
             <div class="col-md-6 me-3">
                 <h1 class="font-poppins fw-bold">Your Cart</h1>
                 <p class="font-montserrat text-muted mb-4">Our top selling product that you may like</p>
-                <form action="" class="d-flex justify-content-between mb-3 border-primary border-bottom">
+
+                {{-- <form action="" class="d-flex justify-content-between mb-3 border-primary border-bottom">
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                         <label class="form-check-label font-poppins text-main" for="flexCheckDefault">
@@ -14,91 +15,120 @@
                         </label>
                     </div>
                     <button class="btn btn-transparent p-0 text-end font-poppins text-danger">Hapus Semua</button>
-                </form>
+                </form> --}}
 
-                <form action="">
-
+                @foreach ($belanjaan as $cart)
                     <div class="form-check mb-2" id="produk">
-                        <input class="form-check-input" type="checkbox" value="" id="produk">
                         <label class="form-check-label font-poppins d-block labelproduk pb-3 bg-light shadow-sm"
                             for="produk">
-                            <a href=""><img src="https://source.unsplash.com/120x120?product" alt="nama produk"
-                                    class="float-start me-3"></a>
-                            <h5 class="font-poppins text-main fw-bold">Sepatu</h5>
-                            <p class="font-montserrat deskripsiproduk">Lorem ipsum dolor sit amet, consectetur adipisicing.
-                            </p>
-                            <h6 class="hargaproduk font-poppins fw-bold">Rp 20.000
-                                <span class="font-poppins hargaproduk text-muted text-decoration-line-through ms-2">Rp
-                                    100.000
-                                </span>
-                            </h6>
-                            <a href="#detailproduk" data-bs-toggle="collapse" role="button" aria-expanded="false"
-                                aria-controls="detailproduk" class="deskripsiproduk text-main fw-bold">Lihat
-                                Detail<i class="fas fa-solid fa-caret-down ms-2"></i></a>
+
+                            @foreach ($gambar as $item)
+                                @if ($cart->product_id == $item[0]->product_id)
+                                    <div class="covergambar d-inline-block float-start me-3">
+                                        <a href="/product?key={{ $cart->product->key_product }}"><img
+                                                src="gambar-product/{{ $item[0]->gambar }}" alt="nama produk"
+                                                class="float-start me-3"></a>
+                                    </div>
+                                @endif
+                            @endforeach
+
+                            <h5 class="font-poppins text-main fw-bold">{{ $cart->product->judul }}</h5>
+                            <p class="font-montserrat deskripsiproduk">{{ $cart->product->informasi }}</p>
+                            @if ($cart->product->diskon !== null)
+                                <h6 class="hargaproduk font-poppins fw-bold">
 
 
-                            <div class="range float-end text-end me-4">
-                                <label for="myRange"
-                                    class="form-label d-block text-center p-0 font-poppins fw-bold text-main"
-                                    id="demo"></label>
-                                <input type="range" class="form-range" min="1" max="10" value="1" step="1" id="myRange">
+                                    @if ($cart->detailproduct != null)
+                                        <span
+                                            class="bg-main rounded py-1 px-2 text-white">{{ $cart->detailproduct->nama }}</span>
+                                        <span
+                                            class="bg-success rounded py-1 px-2 text-white me-2">{{ $cart->product->diskon }}%</span>Rp
+                                        {{ $cart->detailproduct->harga - ($cart->detailproduct->harga * $cart->product->diskon) / 100 }}
+                                        <span class="font-poppins hargaproduk text-muted text-decoration-line-through ms-2">
+                                            Rp {{ $cart->detailproduct->harga }}
+                                        </span>
+                                    @else
+                                        <span
+                                            class="bg-main rounded py-1 px-2 text-white">{{ $cart->product->nama }}</span>
+                                        Rp {{ $cart->product->harga }}
+                                        <span
+                                            class="font-poppins hargaproduk text-muted text-decoration-line-through ms-2">Rp
+                                            {{ $cart->product->harga - ($cart->product->harga * $cart->product->diskon) / 100 }}
+                                        </span>
+                                    @endif
+
+
+                                </h6>
+                            @else
+                                <h6 class="hargaproduk font-poppins fw-bold">Rp {{ $cart->product->harga }}</h6>
+                            @endif
+                            <a href="#note{{ $cart->product->key_product }}" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="note{{ $cart->product->key_product }}"
+                                class="deskripsiproduk text-main fw-bold">Note<i
+                                    class="fas fa-solid fa-caret-down ms-2"></i></a>
+
+
+                            <form action="/cart/{{ $cart->id }}" method="GET" class="d-inline-block ms-5">
+                                @csrf
+                                <button class="bg-transparent text-danger" type="submit"><i
+                                        class="fa-solid fa-trash"></i></button>
+                            </form>
+
+                            <div class="float-end text-end me-4 range">
+                                <input class="form-control form-control-lg input text-main font-poppins fw-bold"
+                                    type="number" placeholder="" aria-label=".form-control-lg example" value="1" width="10"
+                                    min="1" max="{{ $cart->product->stock }}">
                             </div>
 
 
-                            <form action="" class="float-end text-danger">
-                                <button class="btn btn-transparent"><i
-                                        class="fas fa-solid fa-trash text-danger"></i></button>
-                            </form>
 
                             {{-- collapse detail produk --}}
-                            <div id="detailproduk" class="collapse mt-4">
-                                <span
-                                    class="bg-main text-white font-montserrat detailproduk fw-bold border-rd px-3 py-2 mx-1">Warna
-                                    Putih</span>
-                                <span
-                                    class="bg-main text-white font-montserrat detailproduk fw-bold border-rd px-3 py-2 mx-1">XL</span>
-                                <span
-                                    class="bg-main text-white font-montserrat detailproduk fw-bold border-rd px-3 py-2 mx-1">NB</span>
+                            <div id="note{{ $cart->product->key_product }}" class="collapse mt-4">
+                                <small class="text-main">{{ $cart->note }}</small>
                             </div>
                             {{-- akhir collapse detail produk --}}
 
                         </label>
                     </div>
-
-                </form>
+                @endforeach
 
             </div>
-            <div class="col-md-4">
+            <div class="col-md-5">
                 <div class="card border-rd p-2 shadow">
                     <div class="card-body">
                         <h4 class="font-poppins text-main mb-4">Shopping Summary</h4>
 
-                        <div class="d-flex justify-content-between barang mb-2">
-                            <small class="font-montserrat text-dark">Barang 1</small>
-                            <small class="font-montserrat text-dark">Rp 100.000</small>
-                        </div>
-                        <div class="d-flex justify-content-between barang mb-2">
-                            <small class="font-montserrat text-dark">Barang 2</small>
-                            <small class="font-montserrat text-dark">Rp 80.000</small>
-                        </div>
-                        <div class="d-flex justify-content-between barang mb-2">
-                            <small class="font-montserrat text-dark">Barang 3</small>
-                            <small class="font-montserrat text-dark">Rp 10.000</small>
-                        </div>
-                        <div class="d-flex justify-content-between barang mb-2">
-                            <small class="font-montserrat text-dark">Barang 4</small>
-                            <small class="font-montserrat text-dark">Rp 126.000</small>
-                        </div>
+                        @foreach ($belanjaan as $cart)
+                            <div class="d-flex justify-content-between barang mb-2 containerproduk">
+                                <small class="font-montserrat text-dark namaproduk">{{ $cart->product->judul }}</small>
+                                @if ($cart->product->diskon != null)
+                                    <input type="hidden" class="hargaproduk" name="hargaproduk"
+                                        value="@if ($cart->detailproduct != null) Rp {{ $cart->detailproduct->harga - ($cart->detailproduct->harga * $cart->product->diskon) / 100 }} @else Rp {{ $cart->harga - ($cart->harga * $cart->product->diskon) / 100 }} @endif">
+                                    <small class="font-montserrat text-dark cartproduk"></small>
+                                @else
+                                    <input type="hidden" class="hargaproduk"
+                                        value="@if ($cart->detailproduct != null) Rp {{ $cart->detailproduct->harga }} @else Rp {{ $cart->harga }} @endif">
+                                    <small class="font-montserrat text-dark cartproduk"></small>
+                                @endif
+                            </div>
+                        @endforeach
+
+
 
 
                         {{-- total --}}
                         <div class="d-flex justify-content-between my-3">
                             <h5 class="font-montserrat text-dark fw-bold">Total</h5>
-                            <h5 class="font-montserrat text-dark fw-bold">Rp 100.000</h5>
+                            <h5 class="font-montserrat text-dark fw-bold" id="total"></h5>
                         </div>
                         {{-- akhir total --}}
-                        <form action="" class="text-center">
-                            <button class="btn bg-main py-2 px-5 text-center mx-auto fw-bold text-white">Buy (1)</button>
+                        <form action="/precheckout" method="POST" class="text-center">
+                            @csrf
+                            <input type="hidden" name="total" value="" id="inputtotal">
+                            <input type="number" name="jumlah[]" value="" id="inputjumlah">
+                            <input type="hidden" value="{{ auth()->user()->id }}" name="user">
+                            <button type="submit"
+                                class="btn bg-main py-2 px-5 text-center mx-auto fw-bold text-white">Checkout</button>
                         </form>
                     </div>
                 </div>

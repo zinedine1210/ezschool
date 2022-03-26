@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccountController;
 use App\Http\Controllers\AddressController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
@@ -12,6 +13,7 @@ use App\Http\Controllers\ChangePasswordController;
 use App\Http\Controllers\ChatController;
 use App\Http\Controllers\KategoryController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\PaymentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,15 +49,12 @@ Route::middleware(['auth'])->group(function () {
 
     Route::post("/logout", [LoginController::class, "logout"]);
 
-    Route::get('/cooperative', [LoginController::class, 'cooperative']);
+    Route::get('/cooperative', [LoginController::class, 'cooperative'])->name("home");
     Route::get('/library', [LoginController::class, 'library']);
 
     Route::get('/my-cart', [CartController::class, 'index']);
 
-    Route::get('/product', [InfoController::class, 'index']);
-    Route::get('/address', [InfoController::class, 'address']);
-    Route::get('/shipment-method', [InfoController::class, 'shipment']);
-    Route::get('/account-setting', [InfoController::class, 'account']);
+
     Route::get('/chat', [InfoController::class, 'chat']);
     Route::get('/history', [InfoController::class, 'history']);
     Route::get('/transaksi', [InfoController::class, 'transaksi']);
@@ -66,6 +65,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/edit-my-profile', [InfoController::class, 'editprofile']);
     Route::post("/edit-my-profile", [LoginController::class, "aksiEditProfile"]);
 
+    Route::resource("/account-setting", AccountController::class);
+
 
     Route::post('/pay-now', [InfoController::class, "payNow"]);
 
@@ -74,9 +75,15 @@ Route::middleware(['auth'])->group(function () {
     Route::resource("/my-address", AddressController::class);
 
 
+    // CHECKOUT
+    // Route::get('/checkout', [PaymentController::class, 'checkout']);
+    Route::post('/checkout', [PaymentController::class, 'aksiCheckout']);
 
+    Route::post("/precheckout", [CartController::class, 'precheckout']);
 
-
+    Route::post("/cart", [CartController::class, "addCart"]);
+    Route::get("/cart/{id}", [CartController::class, "deleteCart"]);
+    Route::get('/product', [PaymentController::class, 'infoProduct']);
 
 
 
@@ -96,6 +103,11 @@ Route::middleware(['auth'])->group(function () {
 
     Route::resource('/admin-chat', ChatController::class);
     Route::resource('/admin-products', ProductController::class);
+
+    // ADD DETAIL PRODUCT
+    Route::post("/admin-detail", [AdminController::class, "addDetail"]);
+    Route::get("/admin-detail/{id}", [AdminController::class, "deleteDetail"]);
+
     Route::resource('/admin-category', KategoryController::class);
     Route::resource('/admin-order', OrderController::class);
 });

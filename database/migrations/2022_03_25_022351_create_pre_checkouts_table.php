@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateChatsTable extends Migration
+class CreatePreCheckoutsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class CreateChatsTable extends Migration
      */
     public function up()
     {
-        Schema::create('chats', function (Blueprint $table) {
+        Schema::create('pre_checkouts', function (Blueprint $table) {
             $table->id();
-            $table->text("chat");
-            $table->string("key_chat");
-            $table->enum("role", ['admin', 'user']);
-            $table->enum("status", ['read', 'deliver'])->nullable();
-            $table->foreignId("user_id");
+            $table->bigInteger("harga");
+            $table->integer("jumlah");
+            $table->foreignId("orderlist_id");
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ class CreateChatsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('chats');
+        Schema::dropIfExists('pre_checkouts');
     }
 }
