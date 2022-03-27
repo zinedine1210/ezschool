@@ -154,7 +154,7 @@ class LoginController extends Controller
         $data = GambarProduct::all()->groupBy("product_id");
 
         return view('cooperative.index', [
-            'cart' => OrderList::where("user_id", auth()->user()->id)->where("status", "cart")->get(),
+            'cart' => OrderList::where("user_id", auth()->user()->id)->where("status", "cart")->count(),
             'details' => DetailProduct::all(),
             'categories' => Kategory::all(),
             'products' => Product::all(),

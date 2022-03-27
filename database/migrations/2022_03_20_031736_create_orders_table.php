@@ -19,6 +19,7 @@ class CreateOrdersTable extends Migration
             $table->string("nama");
             $table->bigInteger("phone");
             $table->bigInteger("shippingprice");
+            $table->enum("status", ['precheckout', "checkout"]);
             $table->enum("paymentmethod", ['cardpayment', 'takeatplace']);
             $table->bigInteger("total");
             $table->string("time")->default(date("d M Y"));

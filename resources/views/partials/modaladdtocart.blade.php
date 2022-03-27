@@ -10,17 +10,16 @@
                 <div class="modal-body font-poppins">
                     <form action="/cart" method="POST">
                         @csrf
-                        <input type="hidden" name="harga" value="{{ $product->harga }}">
+                        {{-- <input type="text" name="harga"
+                            value="@if ($product->diskon != null) {{ $product->harga - ($product->harga * $product->diskon) / 100 }} @else {{ $product->harga }} @endif"> --}}
                         <input type="hidden" name="product_id" value="{{ $product->id }}">
 
                         <select class="form-select mb-3" name="detail" aria-label=" example">
                             @foreach ($details as $item)
                                 @if ($item->product_id == $product->id)
-                                    <option value="{{ $item->id }}">{{ $item->nama }} @if ($item->harga == $product->harga)
-                                        @else
-                                            => Rp {{ $item->harga }}
-                                        @endif
-                                        (Stock {{ $item->stock }})
+                                    <option value="{{ $item->id }}">{{ $item->nama }} @ {{ $item->harga }}
+                                        (Stock
+                                        {{ $item->stock }})
                                     </option>
                                 @else
                                 @endif

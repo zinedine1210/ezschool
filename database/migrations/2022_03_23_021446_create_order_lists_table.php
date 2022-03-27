@@ -16,10 +16,11 @@ class CreateOrderListsTable extends Migration
         Schema::create('order_lists', function (Blueprint $table) {
             $table->id();
             $table->integer("harga");
+            $table->bigInteger("total");
             $table->integer("jumlah");
             $table->string("key_order")->nullable();
             $table->foreignId("order_id")->nullable();
-            $table->enum("status", ['cart', 'checkout', 'precheckout']);
+            $table->enum("status", ['cart', 'checkout']);
             $table->string("note")->nullable();
             $table->foreignId("detailproduct_id")->nullable();
             $table->foreignId("product_id");

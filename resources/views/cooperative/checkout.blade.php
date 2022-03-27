@@ -11,6 +11,7 @@
                     <form action="/checkout" method="POST">
                         @csrf
 
+                        <input type="hidden" name="totalorder" id="totalorder" value="">
                         {{-- CONTACT --}}
                         <h6 class="text-main">Receiver and contact information</h6>
                         <small class="text-muted mb-3">Please fill an active number so we can easily contact you</small>
@@ -165,45 +166,78 @@
             <h5 class="mb-3 text-main ms-3 mt-3">Your Product</h5>
 
             <div class="bawahinfo">
-                @foreach ($data as $data)
-                    <div class="kartu shadow-sm border-rd bg-light font-poppins mx-auto mt-2">
-                        <span class="kotak float-start me-2">
-                            @foreach ($gambar as $item)
-                                @if ($data->product_id == $item[0]->product_id)
-                                    <img src="gambar-product/{{ $item[0]->gambar }}" alt="nama produk"
-                                        class="float-start me-3">
-                                @endif
-                            @endforeach
-                        </span>
-                        <h5 class="fw-bold text-main">{{ $data->product->judul }}</h5>
-                        <small class="text-muted">{{ $data->note }}</small>
-                        @if ($data->product->diskon !== null)
-                            <h6 class=" font-montserrat fw-bold mt-5">
+                @foreach ($lists as $list)
+                    <div class="mb-4 mx-2">
+                        <div class="font-poppins d-block border-rd pb-3 bg-light shadow-sm p-2 position-relative">
 
 
-                                @if ($data->detailproduct != null)
+
+                            {{-- GAMBAR --}}
+
+                            <span class="kotak float-start me-2 rounded">
+                                @foreach ($gambar as $item)
+                                    @if ($list->product_id == $item[0]->product_id)
+                                        <img src="gambar-product/{{ $item[0]->gambar }}" alt="nama produk"
+                                            class="float-start me-3">
+                                    @endif
+                                @endforeach
+                            </span>
+
+                            {{-- DETAIL INFORMASI --}}
+                            <h5 class="font-poppins text-main fw-bold">{{ $list->product->judul }} <span
+                                    class="badge bg-main">{{ $list->jumlah }}x</span></h5>
+                            <p class="font-montserrat deskripsiproduk">{{ $list->product->informasi }}</p>
+
+
+
+
+                            {{-- HARGA --}}
+                            @if ($list->product->diskon != null)
+                                <h6 class="font-poppins fw-bold">
+                                    @if ($list->detailproduct_id != null)
+                                        <span
+                                            class="bg-main rounded py-1 px-2 text-white">{{ $list->detailproduct->nama }}</span>
+                                    @endif
+
                                     <span
-                                        class="bg-main rounded py-1 px-2 text-white">{{ $data->detailproduct->nama }}</span>
-                                    <span
-                                        class="bg-success rounded py-1 px-2 text-white me-2">{{ $data->product->diskon }}%</span>Rp
-                                    {{ $data->detailproduct->harga - ($data->detailproduct->harga * $data->product->diskon) / 100 }}
-                                    <span class="font-montserrat hargaproduk text-muted text-decoration-line-through ms-2">
-                                        Rp {{ $data->detailproduct->harga }}
-                                    </span>
-                                @else
-                                    <span class="bg-main rounded py-1 px-2 text-white">{{ $data->product->nama }}</span>
-                                    Rp {{ $data->product->harga }}
-                                    <span
-                                        class="font-montserrat hargaproduk text-muted text-decoration-line-through ms-2">Rp
-                                        {{ $data->product->harga - ($data->product->harga * $data->product->diskon) / 100 }}
-                                    </span>
-                                @endif
+                                        class="bg-danger rounded py-1 px-2 text-white">{{ $list->product->diskon }}%</span>
+                                    Rp {{ $list->harga }}
 
 
-                            </h6>
-                        @else
-                            <h6 class=" font-montserrat fw-bold mt-5">Rp {{ $data->product->harga }}</h6>
-                        @endif
+
+
+                                    @if ($list->detailproduct_id != null)
+                                        <span class="font-poppins  text-muted text-decoration-line-through ms-2">Rp
+                                            {{ $list->detailproduct->harga }}</span>
+                                    @else
+                                        <span class="font-poppins  text-muted text-decoration-line-through ms-2">Rp
+                                            {{ $list->product->harga }}</span>
+                                    @endif
+                                </h6>
+                            @else
+                                <h6 class=" font-poppins fw-bold">Rp {{ $list->harga }}</h6>
+                            @endif
+
+                            <h5 class="font-poppins fw-bold text-main me-5">Rp {{ $list->total }}</h5>
+
+
+                            {{-- NOTE --}}
+
+                            <button data-bs-toggle="collapse" data-bs-target="#note{{ $list->product->key_product }}"
+                                class="position-absolute d-inline top-100 start-50 fw-bold translate-middle badge rounded-pill bg-danger">
+                                Note<i class="fas fa-solid fa-caret-down ms-1"></i>
+                                <span class="visually-hidden">note</span>
+                            </button>
+
+
+
+                            {{-- collapse detail produk --}}
+                            <div id="note{{ $list->product->key_product }}" class="collapse mt-4">
+                                <small class="text-main">{{ $list->note }}</small>
+                            </div>
+                            {{-- akhir collapse detail produk --}}
+
+                        </div>
                     </div>
                 @endforeach
             </div>
@@ -214,7 +248,7 @@
                 <hr>
                 <div class="d-flex justify-content-between barang mb-2">
                     <small class="font-poppins text-dark">Subtotal</small>
-                    <small class="font-poppins text-dark" id="subtotal">{{ $total }}</small>
+                    <small class="font-poppins text-dark" id="subtotal">Rp {{ $total }}</small>
                 </div>
                 <div class="d-flex justify-content-between barang mb-2">
                     <small class="font-poppins text-dark">Shipping price</small>

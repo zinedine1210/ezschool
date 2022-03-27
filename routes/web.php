@@ -57,7 +57,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/chat', [InfoController::class, 'chat']);
     Route::get('/history', [InfoController::class, 'history']);
-    Route::get('/transaksi', [InfoController::class, 'transaksi']);
+    // Route::get('/transaksi', [InfoController::class, 'transaksi']);
     Route::get('/edit-my-address', [InfoController::class, 'editMyAddress']);
 
     // MY PROFILE
@@ -76,10 +76,8 @@ Route::middleware(['auth'])->group(function () {
 
 
     // CHECKOUT
-    // Route::get('/checkout', [PaymentController::class, 'checkout']);
+    Route::get('/checkout', [PaymentController::class, 'checkout']);
     Route::post('/checkout', [PaymentController::class, 'aksiCheckout']);
-
-    Route::post("/precheckout", [CartController::class, 'precheckout']);
 
     Route::post("/cart", [CartController::class, "addCart"]);
     Route::get("/cart/{id}", [CartController::class, "deleteCart"]);

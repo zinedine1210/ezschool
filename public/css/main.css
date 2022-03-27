@@ -87,6 +87,7 @@ a {
 }
 .range {
     width: 80px !important;
+    margin-right: 80px !important;
     margin-top: -50px !important;
 }
 .info-panel {

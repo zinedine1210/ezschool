@@ -42,7 +42,7 @@
     {{-- Trix editor --}}
     <link rel="stylesheet" type="text/css" href="../css/trix.css">
     <script type="text/javascript" src="../js/trix.js"></script>
-    <script>
+    {{-- <script>
         function initFreshChat() {
             window.fcWidget.init({
                 token: "bfb3d5d1-f19a-4808-a0d9-39f37029822f",
@@ -61,9 +61,9 @@
         }
         window.addEventListener ? window.addEventListener("load", initiateCall, !1) : window.attachEvent("load",
             initiateCall, !1);
-    </script>
-    <script src="../js/store.js" async></script>
+    </script> --}}
 
+    @livewireStyles
     <title>{{ $title }} | EzSchool</title>
 </head>
 
@@ -147,6 +147,7 @@
     <!-- AOS -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
+    <script src="../js/store.js"></script>
     {{-- JS Toastr --}}
     <script>
         @if (session()->has('berhasil'))
@@ -173,6 +174,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
+    @livewireScripts
 </body>
 
 </html>

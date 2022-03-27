@@ -80,11 +80,12 @@ a {
     display: inline-block !important;
     width: 150px !important;
     height: 130px !important;
+    position: relative !important;
     overflow: hidden !important;
 }
 
 .bawahinfo {
-    height: 250px !important;
+    height: 300px !important;
     overflow-y: scroll !important;
 }
 

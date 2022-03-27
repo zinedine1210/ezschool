@@ -11,10 +11,12 @@ $("#shipping").on("change", function() {
     }
     var subtotal = parseFloat(document.getElementById("subtotal").innerText.replace("Rp ", ""))
     var totalsemua = document.getElementById("totalsemua")
+    var totalorder = document.getElementById("totalorder")
 
 
     var value = subtotal + final
     totalsemua.innerHTML = `Rp ${value}`
+    totalorder.value = value
 
     document.getElementById("shippingPlace").innerHTML = data
     document.getElementById("shippingmethod").value = final

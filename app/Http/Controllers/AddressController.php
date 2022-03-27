@@ -19,7 +19,7 @@ class AddressController extends Controller
     public function index()
     {
         return view("cooperative.my-address", [
-            'cart' => OrderList::where("user_id", auth()->user()->id)->where("status", "cart")->get(),
+            'cart' => OrderList::where("user_id", auth()->user()->id)->where("status", "cart")->count(),
             'categories' => Kategory::all(),
             'addresses' => Address::where("user_id", auth()->user()->id)->get()
         ]);

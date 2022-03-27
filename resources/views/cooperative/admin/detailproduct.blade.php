@@ -21,13 +21,13 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($details as $item)
+                        @foreach ($details as $detail)
                             <tr>
-                                <th>{{ $item->nama }}</th>
-                                <th>{{ $item->stock }}</th>
-                                <th>{{ $item->harga }}</th>
+                                <th>{{ $detail->nama }}</th>
+                                <th>{{ $detail->stock }}</th>
+                                <th>{{ $detail->harga }}</th>
                                 <td>
-                                    <form action="/admin-detail/{{ $item->id }}">
+                                    <form action="/admin-detail/{{ $detail->id }}">
                                         @csrf
                                         <button class="text-danger bg-transparent d-inline"
                                             onclick="return alert('Apakah anda yakin ingin menghapus?')"><i

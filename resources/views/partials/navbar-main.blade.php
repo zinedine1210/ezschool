@@ -37,7 +37,7 @@
             <a href="/my-cart" class="mx-3 text-dark position-relative" data-bs-target="tooltip" title="Your Cart"><i
                     class="fab fa-opencart text-main3 fs-4"></i>
                 <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                    {{ $cart->count() }}
+                    {{ $cart }}
                     <span class="visually-hidden">Cart</span>
                 </span></a>
             <a href="/my-profile" class="text-dark ms-3 profil"><img src="foto-profile/{{ auth()->user()->profile }}"
